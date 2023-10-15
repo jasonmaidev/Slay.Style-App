@@ -56,7 +56,9 @@ const DeleteStyleWidget = ({ userId, styleId, handleDeleteClose, pageNumber }) =
   }
 
   const handleDeleteStyle = () => {
-    deleteStyleMutation.mutate()
+    handleSnackbarOpen()
+    setTimeout(() => navigate(`/styles/${userId}`), 2500)
+    setTimeout(() => deleteStyleMutation.mutate(), 3000)
   }
 
   const deleteStyleMutation = useMutation({
@@ -70,10 +72,7 @@ const DeleteStyleWidget = ({ userId, styleId, handleDeleteClose, pageNumber }) =
       console.log("Error fetching:" + context.id + error)
     },
     onSettled: () => {
-      handleSnackbarOpen()
       queryClient.invalidateQueries(['stylesData', sortByOccasion, pageNumber])
-      setTimeout(() => queryClient.invalidateQueries(["stylesData", sortByOccasion, pageNumber]), 2000)
-      setTimeout(() => navigate(`/styles/${userId}`), 2500)
       dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyAllowedDeletes - 1 }))
       if (dailyAllowedDeletes <= 1 && !nextRefreshDate) {
         dispatch(setNextRefreshDate({ nextRefreshDate: Date.now() + 86400000 }))
@@ -126,7 +125,7 @@ const DeleteStyleWidget = ({ userId, styleId, handleDeleteClose, pageNumber }) =
         </Box>
         <FlexEvenlyBox pt={2} gap={2}>
           <Button
-            disabled={dailyAllowedDeletes < 1 && guestUser}
+            disabled={openSnackbar || (dailyAllowedDeletes < 1 && guestUser)}
             onClick={handleDeleteStyle}
             sx={{
               padding: "1rem 4rem",
@@ -190,9 +189,9 @@ const DeleteStyleWidget = ({ userId, styleId, handleDeleteClose, pageNumber }) =
             horizontal: "center"
           }}
           open={openSnackbar}
-          autoHideDuration={2000}
+          autoHideDuration={3000}
           onClose={handleSnackbarClose}
-          message="Style deleted."
+          message="Deleting style..."
           action={action}
         />
       </div>
