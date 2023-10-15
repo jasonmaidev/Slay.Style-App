@@ -62,7 +62,7 @@ const LoginPage = () => {
             fontSize={"0.75rem"}
             fontWeight={600}
             color={theme.palette.neutral.dark}>
-            How to Dress Becomes One Less Stress
+            How to dress becomes one less stress.
           </Typography>
         )}
         <FlexBetweenBox gap="1.75rem">
