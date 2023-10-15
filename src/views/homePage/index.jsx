@@ -1,10 +1,11 @@
 import "../../styles/gradient-button.min.css"
-import { useState, useEffect, lazy, Suspense } from "react"
+import { useState, useEffect, lazy, Suspense, forwardRef, CSSProperties } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import GridLoader from "react-spinners/GridLoader"
 import PropagateLoader from "react-spinners/PropagateLoader"
-import { useQuery } from "@tanstack/react-query"
-import { Box, Typography, useMediaQuery, Button, useTheme } from "@mui/material"
+import { styled } from "@mui/system"
+import { Box, Typography, useMediaQuery, Button, useTheme, Grow, Dialog } from "@mui/material"
 import {
   setDailyAllowedResets,
   setCreatingStyle,
@@ -14,12 +15,21 @@ import {
   setDailyAllowedEdits,
   setDailyAllowedDeletes,
   setNextRefreshDate,
-  setLogout
 } from "state"
 import Navbar from "views/navbar"
-import apiUrl from "config/api"
 const MobileFooterNavigation = lazy(() => import("../widgets/MobileFooterNavigation"))
 const DesktopFooter = lazy(() => import("../widgets/DesktopFooter"))
+const ResetWardrobeWidget = lazy(() => import("views/widgets/ResetWardrobeWidget"))
+
+const Transition = forwardRef(function Transition(props, ref) {
+  return <Grow ref={ref} {...props} />
+})
+
+const ResetWardrobeDialog = styled(Dialog)(({ theme }) => ({
+  "& .MuiDialog-paper": {
+    borderRadius: "2rem"
+  },
+}))
 
 const HomePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px) and (max-height:2160px)")
@@ -28,50 +38,19 @@ const HomePage = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { _id } = useSelector((state) => state.user)
-  const token = useSelector((state) => state.token)
   const mode = useSelector((state) => state.mode)
   const nextRefreshDate = useSelector((state) => state.nextRefreshDate)
+  const dailyAllowedResets = useSelector((state) => state.dailyAllowedResets)
+  const guestUser = useSelector((state) => state.user.guestUser)
 
-  const [stylesCount, setStylesCount] = useState(0)
-  const [apparelsCount, setApparelsCount] = useState(0)
-
-  const getApparelsCount = () => {
-    return fetch(`${apiUrl}/apparels/${_id}/count`, {
-      method: "GET",
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((res) => res.json())
-      .then(totalApparelsCount => {
-        setApparelsCount(totalApparelsCount) // Retrived from Api
-      })
+  /* Reset Wardrobe Popup Dialog State */
+  const [resetWardrobeOpen, setResetWardrobeOpen] = useState(false)
+  const handleResetWardrobeOpen = () => {
+    setResetWardrobeOpen(true)
   }
-
-  const { data: apparelsCountData } = useQuery(["apparelsCountData"], getApparelsCount, {
-    keepPreviousData: true,
-    staleTime: 2000 //same duration as snackbar
-  })
-
-  const getStylesCount = () => {
-    return fetch(`${apiUrl}/styles/${_id}/count`, {
-      method: "GET",
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((res) => res.json())
-      .then(totalStylesCount => {
-        setStylesCount(totalStylesCount) // Retrived from Api
-      })
+  const handleResetWardrobeClose = () => {
+    setResetWardrobeOpen(false)
   }
-
-  const { data: stylesCountData } = useQuery(["stylesCountData"], getStylesCount, {
-    keepPreviousData: true,
-    staleTime: 2000 //same duration as snackbar
-  })
-
-  if (apparelsCountData?.message === 'jwt expired' || stylesCountData?.message === 'jwt expired') {
-    alert('App session has expired. Please login again.')
-    dispatch(setLogout())
-  }
-
 
   const refreshGuestActions = () => {
     dispatch(setDailyAllowedResets({ dailyAllowedResets: 2 }))
@@ -93,8 +72,9 @@ const HomePage = () => {
     dispatch(setEditingStyle({ editingStyle: false }))
   }
 
-  const goToStyles = () => {
-    navigate(`/styles/${_id}`)
+  const stylewidgetoverride: CSSProperties = {
+    display: "block",
+    margin: "3rem auto",
   }
 
   useEffect(() => {
@@ -108,6 +88,7 @@ const HomePage = () => {
       refreshGuestActions()
       dispatch(setNextRefreshDate({ nextRefreshDate: Math.floor(Date.now()) + 86400000 }))
     }
+    return
   }, [])
 
   return (
@@ -116,55 +97,6 @@ const HomePage = () => {
 
       <Navbar />
       {/* ----- Page Body ----- */}
-      <Box
-        display={"flex"}
-        flexDirection={"row"}
-        alignItems={"center"}
-        justifyContent={isNonMobileScreens ? "flex-end" : "center"}
-        p={"2rem 4rem 0 4rem"}
-      >
-        <Box
-          display={"flex"}
-          flexDirection={"row"}
-          alignItems={"center"}
-          border={`solid 1px ${palette.neutral.medium}`}
-          borderRadius={"6rem"}
-          p={"0.5rem 2rem"}
-        >
-          <Typography color={palette.neutral.medium}>Apparels: </Typography>
-          <Button
-            onClick={goToWardrobe}
-            sx={{
-              color: palette.primary.main,
-              borderRadius: "6rem",
-              textTransform: "none",
-              fontWeight: 700,
-              "&:hover": {
-                color: palette.primary.dark,
-                backgroundColor: palette.background.default,
-              }
-            }}
-          >
-            {apparelsCount}
-          </Button>
-          <Typography color={palette.neutral.medium}>Styles: </Typography>
-          <Button
-            onClick={goToStyles}
-            sx={{
-              color: palette.primary.main,
-              borderRadius: "6rem",
-              textTransform: "none",
-              fontWeight: 700,
-              "&:hover": {
-                color: palette.primary.dark,
-                backgroundColor: palette.background.default,
-              }
-            }}
-          >
-            {stylesCount}
-          </Button>
-        </Box>
-      </Box>
       <Box
         width="100%"
         padding={isNonMobileScreens ? "12rem 16%" : "2rem 8%"}
@@ -183,7 +115,6 @@ const HomePage = () => {
           <Typography
             variant={isHDScreens ? "h2" : isNonMobileScreens ? "h1" : "h2"}
             textAlign={"center"}
-            // fontWeight={500}
             color={palette.neutral.darker}
           >
             Build Your Wardrobe
@@ -258,7 +189,8 @@ const HomePage = () => {
           </Button>
 
           <Button
-            onClick={goToWardrobe}
+            disabled={!isNonMobileScreens && (!guestUser || dailyAllowedResets < 1)}
+            onClick={isNonMobileScreens ? goToWardrobe : handleResetWardrobeOpen}
             size="medium"
             variant="outlined"
             sx={
@@ -290,7 +222,7 @@ const HomePage = () => {
                 }
             }
           >
-            Manage Apparels
+            {isNonMobileScreens ? "Manage Apparels" : "Reset Wardrobe"}
           </Button>
 
         </Box>
@@ -323,6 +255,30 @@ const HomePage = () => {
           </Suspense>
         }
       </Box>
+
+      {/* ----- Popup Reset Wardrobe Dialog ----- */}
+      <ResetWardrobeDialog
+        open={resetWardrobeOpen}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleResetWardrobeClose}
+        aria-describedby="alert-dialog-grow-description"
+      >
+        <Suspense fallback={
+          <GridLoader
+            color={palette.neutral.light}
+            loading={true}
+            cssOverride={stylewidgetoverride}
+            size={50}
+            margin={20}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        }>
+          <ResetWardrobeWidget handleResetWardrobeClose={handleResetWardrobeClose} _id={_id} />
+        </Suspense>
+      </ResetWardrobeDialog>
+
     </Box>
   )
 }

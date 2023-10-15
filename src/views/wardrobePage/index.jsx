@@ -40,6 +40,7 @@ const WardrobePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px) and (max-height:2160px)")
   const isHDScreens = useMediaQuery("(min-width:1280px) and (max-height:900px)")
   const { userId } = useParams()
+  const { _id } = useSelector((state) => state.user)
   const mode = useSelector((state) => state.mode)
   const dispatch = useDispatch()
   const { palette } = useTheme()
@@ -307,7 +308,7 @@ const WardrobePage = () => {
               data-testid="loader"
             />
           }>
-            <ResetWardrobeWidget handleResetWardrobeClose={handleResetWardrobeClose} />
+            <ResetWardrobeWidget handleResetWardrobeClose={handleResetWardrobeClose} _id={_id} />
           </Suspense>
         </ResetWardrobeDialog>
         {/* ----- Mobile Style Widget Page Section  ----- */}

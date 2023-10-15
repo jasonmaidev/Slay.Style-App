@@ -25,11 +25,10 @@ import {
 import Countdown from "react-countdown"
 import apiUrl from "config/api"
 
-const ResetWardrobe = ({ handleResetWardrobeClose }) => {
+const ResetWardrobe = ({ handleResetWardrobeClose, _id }) => {
   const isSmallMobileScreens = useMediaQuery("(max-width:800px) and (max-height:800px)")
   const isNonMobileScreens = useMediaQuery("(min-width:1000px) and (max-height:2160px)")
   const { palette } = useTheme()
-  const { userId } = useParams()
   const token = useSelector((state) => state.token)
   const dispatch = useDispatch()
   const queryClient = useQueryClient()
@@ -83,7 +82,7 @@ const ResetWardrobe = ({ handleResetWardrobeClose }) => {
 
   const resetWardrobeMutation = useMutation({
     mutationFn: async () => {
-      return await fetch(`${apiUrl}/apparels/${userId}/resetwardrobe`, {
+      return await fetch(`${apiUrl}/apparels/${_id}/resetwardrobe`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
       })
@@ -94,7 +93,6 @@ const ResetWardrobe = ({ handleResetWardrobeClose }) => {
     onSettled: () => {
       clearAllStylingSections()
       dispatch(setDailyAllowedResets({ dailyAllowedResets: dailyAllowedResets - 1 }))
-      // setTimeout(() => queryClient.invalidateQueries(["sectionedApparelsData", sortBySection]), 5000)
       queryClient.invalidateQueries(["sectionedApparelsData", sortBySection])
       if (dailyAllowedResets <= 1 && !nextRefreshDate) {
         dispatch(setNextRefreshDate({ nextRefreshDate: Date.now() + 86400000 }))
