@@ -522,6 +522,18 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
           borderRadius={"6rem"}
         >
           <Typography color={palette.neutral.medium}>Uploads Remaining: {dailyAllowedUploads}</Typography>
+          <Typography color={palette.neutral.medium}>Apparel uploads are currently disabled for guest users but will be available again once data sanitization is fully implemented.</Typography>
+        </Box>
+      )}
+      {/* {guestUser && (
+        <Box
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent={"space-evenly"}
+          alignItems={"center"}
+          borderRadius={"6rem"}
+        >
+          <Typography color={palette.neutral.medium}>Uploads Remaining: {dailyAllowedUploads}</Typography>
           {dailyAllowedUploads < 1 && (
             <Box>
               <Typography color={palette.neutral.medium}>
@@ -530,7 +542,7 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
             </Box>
           )}
         </Box>
-      )}
+      )} */}
 
     </Box>
   )
