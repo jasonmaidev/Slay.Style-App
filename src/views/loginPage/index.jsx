@@ -62,7 +62,7 @@ const LoginPage = () => {
             fontSize={"0.75rem"}
             fontWeight={600}
             color={theme.palette.neutral.dark}>
-            Developer with 💛 by JsMai.dev
+            How to Dress Becomes One Less Stress
           </Typography>
         )}
         <FlexBetweenBox gap="1.75rem">
