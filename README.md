@@ -8,7 +8,7 @@ Try it out here at [Slay.Style App](https://slay.style).
 
 For info on the latest app updates and feature releases, see: [Slay.Style Roadmap](https://slay.style/roadmap).
 
-### Closed Alpha Access
+### Closed Beta Access
 
 The MVP is not available yet to the public but accessible via email request.
 
