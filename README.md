@@ -10,7 +10,7 @@ For info on the latest app updates and feature releases, see: [Slay.Style Roadma
 
 ### Closed Beta Access
 
-The MVP is not available yet to the public but accessible via email request.
+The MVP is not available to the public yet but it is accessible via email request invite.
 
 If you've found this repository, it is highly likely you've also received an email invitation with guest user credentials. Please login to the application with the provided account info to try out the awesome features `Slay.Style` has to offer. Thanks!
 
