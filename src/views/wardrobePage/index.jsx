@@ -49,7 +49,7 @@ const WardrobePage = () => {
   const dailyAllowedResets = useSelector((state) => state.dailyAllowedResets)
   const guestUser = useSelector((state) => state.user.guestUser)
 
-  const testVariable = process.env.PUBLIC_URL
+  const testVariable = process.env.TEST_VARIABLE
 
   /* Upload Popup Dialog State */
   const [uploadOpen, setUploadOpen] = useState(false)
