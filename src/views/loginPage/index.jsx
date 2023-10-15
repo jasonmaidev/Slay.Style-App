@@ -57,14 +57,6 @@ const LoginPage = () => {
         alignItems={"center"}
         sx={{ boxShadow: "6px 6px 12px rgba(0,0,0, 0.05)" }}
       >
-        {isNonMobileScreens && (
-          <Typography
-            fontSize={"0.75rem"}
-            fontWeight={600}
-            color={theme.palette.neutral.dark}>
-            How to dress becomes one less stress.
-          </Typography>
-        )}
         <FlexBetweenBox gap="1.75rem">
           {/* ----- Logo ----- */}
           <img
