@@ -57,8 +57,8 @@ const DeleteStyleWidget = ({ userId, styleId, handleDeleteClose, pageNumber }) =
 
   const handleDeleteStyle = () => {
     handleSnackbarOpen()
-    setTimeout(() => navigate(`/styles/${userId}`), 2500)
-    setTimeout(() => deleteStyleMutation.mutate(), 3000)
+    setTimeout(() => navigate(`/styles/${userId}`), 1500)
+    setTimeout(() => deleteStyleMutation.mutate(), 2000)
   }
 
   const deleteStyleMutation = useMutation({
@@ -189,7 +189,7 @@ const DeleteStyleWidget = ({ userId, styleId, handleDeleteClose, pageNumber }) =
             horizontal: "center"
           }}
           open={openSnackbar}
-          autoHideDuration={3000}
+          autoHideDuration={2000}
           onClose={handleSnackbarClose}
           message="Deleting style..."
           action={action}
