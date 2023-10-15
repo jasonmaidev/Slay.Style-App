@@ -85,10 +85,10 @@ const RoadmapWidget = () => {
               <Box p={"0.5rem 1.5rem 0 1.5rem"}>
                 <Typography pb={1}><FiCheckCircle /> Reset Wardrobe: Restores default set of apparels for styling.</Typography>
                 <Typography pb={1}><FiCheckCircle /> Daily Reset limit: 2</Typography>
-                <Typography pb={1}><FiCheckCircle /> Daily Apparel Upload limit: 3</Typography>
                 <Typography pb={1}><FiCheckCircle /> Daily Style Save limit: 10</Typography>
                 <Typography pb={1}><FiCheckCircle /> Daily Apparel / Style Edit limit: 10</Typography>
                 <Typography pb={1}><FiCheckCircle /> Daily Apparel / Style Delete limit: 10</Typography>
+                <Typography pb={1}><FiCheckCircle /> Daily Apparel Upload limit: 0 (Will be enabled once data sanitaztion is fully implemented.)</Typography>
                 <Typography pb={1}><FiCheckCircle /> Automatic limit refresh timer.</Typography>
               </Box>
             </Box>

@@ -18,6 +18,7 @@ import {
   setDailyAllowedResets,
   setLogout
 } from "state"
+import { dailyGuestAllowedResets, dailyGuestAllowedUploads, dailyGuestAllowedSaves, dailyGuestAllowedEdits, dailyGuestAllowedDeletes } from "config/guestAccountCredits"
 import MultipleSelect from "components/MultipleSelect"
 import RemoveFromStyleWidget from "views/widgets/RemoveFromStyleWidget"
 import RandomizeStyleButton from "components/RandomizeStyleButton"
@@ -71,11 +72,11 @@ const EditStyleWidget = ({ userId, occasions }) => {
   const nextRefreshDate = useSelector((state) => state.nextRefreshDate)
 
   const refreshGuestActions = () => {
-    dispatch(setDailyAllowedResets({ dailyAllowedResets: 2 }))
-    dispatch(setDailyAllowedUploads({ dailyAllowedUploads: 3 }))
-    dispatch(setDailyAllowedSaves({ dailyAllowedSaves: 10 }))
-    dispatch(setDailyAllowedEdits({ dailyAllowedEdits: 10 }))
-    dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: 10 }))
+    dispatch(setDailyAllowedResets({ dailyAllowedResets: dailyGuestAllowedResets }))
+    dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyGuestAllowedUploads }))
+    dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyGuestAllowedSaves }))
+    dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyGuestAllowedEdits }))
+    dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyGuestAllowedDeletes }))
     dispatch(setNextRefreshDate({ nextRefreshDate: null }))
   }
 

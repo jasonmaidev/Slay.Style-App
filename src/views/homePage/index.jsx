@@ -17,6 +17,7 @@ import {
   setNextRefreshDate,
 } from "state"
 import Navbar from "views/navbar"
+import { dailyGuestAllowedResets, dailyGuestAllowedUploads, dailyGuestAllowedSaves, dailyGuestAllowedEdits, dailyGuestAllowedDeletes } from "config/guestAccountCredits"
 const MobileFooterNavigation = lazy(() => import("../widgets/MobileFooterNavigation"))
 const DesktopFooter = lazy(() => import("../widgets/DesktopFooter"))
 const ResetWardrobeWidget = lazy(() => import("views/widgets/ResetWardrobeWidget"))
@@ -53,11 +54,11 @@ const HomePage = () => {
   }
 
   const refreshGuestActions = () => {
-    dispatch(setDailyAllowedResets({ dailyAllowedResets: 2 }))
-    dispatch(setDailyAllowedUploads({ dailyAllowedUploads: 3 }))
-    dispatch(setDailyAllowedSaves({ dailyAllowedSaves: 10 }))
-    dispatch(setDailyAllowedEdits({ dailyAllowedEdits: 10 }))
-    dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: 10 }))
+    dispatch(setDailyAllowedResets({ dailyAllowedResets: dailyGuestAllowedResets }))
+    dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyGuestAllowedUploads }))
+    dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyGuestAllowedSaves }))
+    dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyGuestAllowedEdits }))
+    dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyGuestAllowedDeletes }))
     dispatch(setNextRefreshDate({ nextRefreshDate: null }))
   }
 

@@ -22,6 +22,7 @@ import {
   setStylingShorts,
   setStylingFootwear
 } from "state"
+import { dailyGuestAllowedResets, dailyGuestAllowedUploads, dailyGuestAllowedSaves, dailyGuestAllowedEdits, dailyGuestAllowedDeletes } from "config/guestAccountCredits"
 import Countdown from "react-countdown"
 import apiUrl from "config/api"
 
@@ -40,11 +41,11 @@ const ResetWardrobe = ({ handleResetWardrobeClose, _id }) => {
   const dailyAllowedResets = useSelector((state) => state.dailyAllowedResets)
 
   const refreshGuestActions = () => {
-    dispatch(setDailyAllowedResets({ dailyAllowedResets: 2 }))
-    dispatch(setDailyAllowedUploads({ dailyAllowedUploads: 3 }))
-    dispatch(setDailyAllowedSaves({ dailyAllowedSaves: 10 }))
-    dispatch(setDailyAllowedEdits({ dailyAllowedEdits: 10 }))
-    dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: 10 }))
+    dispatch(setDailyAllowedResets({ dailyAllowedResets: dailyGuestAllowedResets }))
+    dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyGuestAllowedUploads }))
+    dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyGuestAllowedSaves }))
+    dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyGuestAllowedEdits }))
+    dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyGuestAllowedDeletes }))
     dispatch(setNextRefreshDate({ nextRefreshDate: null }))
   }
 
