@@ -7,7 +7,7 @@ import PropagateLoader from "react-spinners/PropagateLoader"
 import { styled } from "@mui/system"
 import { setCreatingStyle, setStylingOccasions } from "state"
 import { makeStyles } from "@mui/styles"
-import { Box, Button, Stack, useMediaQuery, Dialog, Grow, useTheme } from "@mui/material"
+import { Box, Button, Stack, useMediaQuery, Dialog, Grow, useTheme, Typography } from "@mui/material"
 import Navbar from "views/navbar"
 const ResetWardrobeWidget = lazy(() => import("views/widgets/ResetWardrobeWidget"))
 const UploadApparelWidget = lazy(() => import("views/widgets/UploadApparelWidget"))
@@ -48,6 +48,8 @@ const WardrobePage = () => {
   const editingStyle = useSelector((state) => state.editingStyle)
   const dailyAllowedResets = useSelector((state) => state.dailyAllowedResets)
   const guestUser = useSelector((state) => state.user.guestUser)
+
+  const testVariable = process.env.PUBLIC_URL
 
   /* Upload Popup Dialog State */
   const [uploadOpen, setUploadOpen] = useState(false)
@@ -212,6 +214,7 @@ const WardrobePage = () => {
                 >
                   Reset Wardrobe
                 </Button>
+                <Typography>Test variable here: {testVariable}</Typography>
               </Stack>)
               :
               editingStyle ?
