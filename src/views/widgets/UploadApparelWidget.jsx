@@ -521,7 +521,6 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
           alignItems={"center"}
           borderRadius={"6rem"}
         >
-          <Typography color={palette.neutral.medium}>Uploads Remaining: {dailyAllowedUploads}</Typography>
           <Typography color={palette.neutral.medium}>Apparel uploads are currently disabled for guest users but will be available again once data sanitization is fully implemented.</Typography>
         </Box>
       )}
