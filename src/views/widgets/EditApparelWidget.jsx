@@ -85,7 +85,7 @@ const EditApparelWidget = ({ picturePath, name, apparelId, section, handleEditCl
         // picture: image,
         // picturePath: image ? newImageName : picturePath
       }
-      return await fetch(`${apiUrl}/apparels/${apparelId}/update`, {
+      return await fetch(`${apiUrl}/apparels/${apparelId}/update/${guestUser}/${dailyAllowedEdits}`, {
         method: "PATCH",
         headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
         body: JSON.stringify(updatedData),

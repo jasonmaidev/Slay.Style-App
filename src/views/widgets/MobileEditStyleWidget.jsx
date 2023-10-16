@@ -137,7 +137,7 @@ const EditStyleWidget = ({ userId, occasions }) => {
 
   const editStyleMutation = useMutation({
     mutationFn: async () => {
-      return await fetch(`${apiUrl}/styles/${editingStyleId}/update`, {
+      return await fetch(`${apiUrl}/styles/${editingStyleId}/update/${guestUser}/${dailyAllowedEdits}`, {
         method: "PATCH",
         headers: {
           Authorization: `Bearer ${token}`,

@@ -63,7 +63,7 @@ const DeleteStyleWidget = ({ userId, styleId, handleDeleteClose, pageNumber }) =
 
   const deleteStyleMutation = useMutation({
     mutationFn: async () => {
-      return await fetch(`${apiUrl}/styles/${styleId}/delete`, {
+      return await fetch(`${apiUrl}/styles/${styleId}/delete/${guestUser}/${dailyAllowedDeletes}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
       })

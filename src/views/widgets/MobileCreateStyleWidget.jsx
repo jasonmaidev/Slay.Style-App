@@ -137,7 +137,7 @@ const MobileCreateStyleWidget = ({ userId }) => {
 
   const createStyleMutation = useMutation({
     mutationFn: async () => {
-      return await fetch(`${apiUrl}/styles/`, {
+      return await fetch(`${apiUrl}/styles/${guestUser}/${dailyAllowedSaves}`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

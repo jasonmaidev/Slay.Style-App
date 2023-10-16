@@ -126,7 +126,7 @@ const CreateStyleWidget = ({ userId }) => {
 
   const saveStyleMutation = useMutation({
     mutationFn: async () => {
-      return await fetch(`${apiUrl}/styles/`, {
+      return await fetch(`${apiUrl}/styles/${guestUser}/${dailyAllowedSaves}`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

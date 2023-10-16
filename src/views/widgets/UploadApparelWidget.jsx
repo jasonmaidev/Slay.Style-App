@@ -144,10 +144,10 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
       }
       formData.append("section", sortBySection)
       if (picture) {
-        formData.append("picture", picture) // sent to backend multur as "picture"
+        formData.append("picture", picture) // sent to backend multer as "picture"
         formData.append("picturePath", picture.name) // sent to backend
       }
-      return await fetch(`${apiUrl}/apparels`, {
+      return await fetch(`${apiUrl}/apparels/${guestUser}/${dailyAllowedUploads}`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,

@@ -61,7 +61,7 @@ const DeleteApparelWidget = ({ picturePath, apparelId, section, handleDeleteClos
 
   const deleteMutation = useMutation({
     mutationFn: async () => {
-      return await fetch(`${apiUrl}/apparels/${apparelId}/delete`, {
+      return await fetch(`${apiUrl}/apparels/${apparelId}/delete/${guestUser}/${dailyAllowedDeletes}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" }
       })
@@ -85,7 +85,7 @@ const DeleteApparelWidget = ({ picturePath, apparelId, section, handleDeleteClos
 
   const deleteDemoMutation = useMutation({
     mutationFn: async () => {
-      return await fetch(`${apiUrl}/apparels/${apparelId}/deletedemo`, {
+      return await fetch(`${apiUrl}/apparels/${apparelId}/deletedemo/${guestUser}/${dailyAllowedDeletes}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
       })

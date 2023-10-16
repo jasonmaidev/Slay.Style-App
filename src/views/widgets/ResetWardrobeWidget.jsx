@@ -83,7 +83,7 @@ const ResetWardrobe = ({ handleResetWardrobeClose, _id }) => {
 
   const resetWardrobeMutation = useMutation({
     mutationFn: async () => {
-      return await fetch(`${apiUrl}/apparels/${_id}/resetwardrobe`, {
+      return await fetch(`${apiUrl}/apparels/${_id}/resetwardrobe/${guestUser}/${dailyAllowedResets}`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
       })
