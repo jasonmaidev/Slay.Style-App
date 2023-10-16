@@ -49,8 +49,6 @@ const WardrobePage = () => {
   const dailyAllowedResets = useSelector((state) => state.dailyAllowedResets)
   const guestUser = useSelector((state) => state.user.guestUser)
 
-  const testVariable = process.env.TEST_VARIABLE
-
   /* Upload Popup Dialog State */
   const [uploadOpen, setUploadOpen] = useState(false)
   const handleUploadOpen = () => {
@@ -214,7 +212,6 @@ const WardrobePage = () => {
                 >
                   Reset Wardrobe
                 </Button>
-                <Typography>Test variable here: {testVariable}</Typography>
               </Stack>)
               :
               editingStyle ?
