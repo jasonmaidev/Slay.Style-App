@@ -50,6 +50,8 @@ const RoadmapWidget = () => {
                 <Typography pb={1}><FiCheckCircle /> Primary user and guest user app registration.</Typography>
                 <Typography pb={1}><FiCheckCircle /> Encrypted user authentication.</Typography>
                 <Typography pb={1}><FiCheckCircle /> Time-based automatic session closure.</Typography>
+                <Typography pb={1}><FiCheckCircle /> Persisted user app sessions.</Typography>
+                <Typography pb={1}><FiCheckCircle /> Rate limitation (200 requests / minute) and server caching.</Typography>
                 <Typography pb={1}><FiCheckCircle /> Drag and drop apparel upload.</Typography>
                 <Typography pb={1}><FiCheckCircle /> Server image optimization.</Typography>
                 <Typography pb={1}><FiCheckCircle /> AWS integration.</Typography>
@@ -69,7 +71,6 @@ const RoadmapWidget = () => {
                 <Typography pb={1}><FiCheckCircle /> Mobile responsive scaling.</Typography>
                 <Typography pb={1}><FiCheckCircle /> Mobile navigation system.</Typography>
                 <Typography pb={1}><FiCheckCircle /> Mobile interaction components.</Typography>
-                <Typography pb={1}><FiCheckCircle /> Rate limitation and caching.</Typography>
               </Box>
             </Box>
             <Box pb={2}>
