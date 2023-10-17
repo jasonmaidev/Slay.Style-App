@@ -166,8 +166,8 @@ const StyleWidget = ({
   return (
     <>
       <Box
-        width={isSmallMobileScreens ? "40%" : isNonMobileScreens ? "22%" : "50%"}
-        padding={isSmallMobileScreens ? "0 4%" : isNonMobileScreens ? "0 1%" : "0%"}
+        width={isSmallMobileScreens ? "48%" : isNonMobileScreens ? "22%" : "50%"}
+        padding={isSmallMobileScreens ? "0 1%" : isNonMobileScreens ? "0 1%" : "0%"}
         display={"flex"}
         flexDirection={"row"}
       >
