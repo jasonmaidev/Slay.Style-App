@@ -81,7 +81,7 @@ const Navbar = ({
       zIndex={theme.zIndex.drawer + 1}
       sx={{ boxShadow: "6px 6px 12px rgba(0,0,0, 0.05)" }}
     >
-      <FlexBetweenBox gap="25%">
+      <FlexBetweenBox gap={isNonMobileScreens ? "1.75rem" : "25%"}>
 
         {/* ----- Logo ----- */}
         <Button
