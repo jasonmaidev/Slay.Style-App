@@ -262,7 +262,7 @@ const RoadmapWidget = () => {
             <Box p={"0.5rem 1.5rem 0 1.5rem"}>
               <Typography pb={1.5}><FiCircle /> Female apparel category expansion.</Typography>
               <Typography pb={1.5}><FiCircle /> Female style builder expansion.</Typography>
-              <Typography pb={1.5}><FiCircle /> Edit apparel category tags and upload.</Typography>
+              <Typography pb={1.5}><FiCircle /> Edit apparel category tags.</Typography>
               <Typography pb={1.5}><FiCircle /> Apparel drag sorting.</Typography>
               <Typography pb={1.5}><FiCircle /> Apparel search sorting.</Typography>
               <Typography pb={1.5}><FiCircle /> Calendar event-based style planner.</Typography>
@@ -271,6 +271,7 @@ const RoadmapWidget = () => {
               <Typography pb={1.5}><FiCircle /> Edge detection post image processing.</Typography>
               <Typography pb={1.5}><FiCircle /> User profile expansion.</Typography>
               <Typography pb={1.5}><FiCircle /> Transition animations.</Typography>
+              <Typography pb={1.5}><FiCircle /> Swipe motion.</Typography>
               <Typography pb={1.5}><FiCircle /> Full public access and account credits system.</Typography>
             </Box>
           </Box>
