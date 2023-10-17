@@ -179,7 +179,7 @@ const RoadmapWidget = () => {
           >
             Features + Specs
           </Typography>
-          <Box p={"0.5rem 1rem 0 1rem"}>
+          <Box p={"0.5rem 0.5rem 0 0.5rem"}>
             <Typography pb={1.5}><FiCheckCircle /> Primary user and guest user app registration.</Typography>
             <Typography pb={1.5}><FiCheckCircle /> Encrypted user authentication.</Typography>
             <Typography pb={1.5}><FiCheckCircle /> Time-based automatic session closure.</Typography>
@@ -216,7 +216,7 @@ const RoadmapWidget = () => {
           >
             Demo Features / Limitations
           </Typography>
-          <Box p={"0.5rem 1rem 0 1rem"}>
+          <Box p={"0.5rem 0.5rem 0 0.5rem"}>
             <Typography pb={1.5}><FiCheckCircle /> Reset Wardrobe: Restores default set of apparels for styling.</Typography>
             <Typography pb={1.5}><FiCheckCircle /> Daily Reset limit: 2</Typography>
             <Typography pb={1.5}><FiCheckCircle /> Daily Style Save limit: 10</Typography>
