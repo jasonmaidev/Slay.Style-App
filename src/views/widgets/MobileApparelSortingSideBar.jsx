@@ -61,7 +61,7 @@ const MobileApparelSortingSideBar = ({ updateApparelsDialogOpen }) => {
       gap={isSmallMobileScreens ? 0 : 1.25}
       zIndex={10}
       borderRadius={10}
-      border={`solid 1px ${palette.neutral.light}`}
+      border={`solid 1px ${palette.neutral.medium}`}
     >
       <IconButton onClick={handleViewHeadwearApparels}>
         <GiBilledCap size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
