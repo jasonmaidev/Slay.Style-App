@@ -105,7 +105,7 @@ const RemoveFromStyleWidget = ({ emptyStyle }) => {
             <Box>
               {/* ----- Default Display Button ----- */}
               {(!emptyStyle && !isRemovingApparel) && (
-                <IconButton disabled>
+                <IconButton sx={{ padding: "8px 6px" }} disabled>
                   <AiOutlineDelete color={palette.neutral.medium} size={isFullHDScreens ? "1.75rem" : "1.4rem"} opacity={1} />
                 </IconButton>
               )}
@@ -115,7 +115,7 @@ const RemoveFromStyleWidget = ({ emptyStyle }) => {
                 <>
                   {stylingShortTops && (
                     <Tooltip title="Remove" placement="top">
-                      <IconButton onClick={clearShortTops}>
+                      <IconButton sx={{ padding: "8px 6px" }} onClick={clearShortTops}>
                         <GiPoloShirt
                           color={palette.neutral.medium}
                           size={isFullHDScreens ? "1.75rem" : "1.4rem"}
@@ -125,7 +125,7 @@ const RemoveFromStyleWidget = ({ emptyStyle }) => {
                   )}
                   {stylingLongTops && (
                     <Tooltip title="Remove" placement="top">
-                      <IconButton onClick={clearLongTops}>
+                      <IconButton sx={{ padding: "8px 6px" }} onClick={clearLongTops}>
                         <GiShirt
                           color={palette.neutral.medium}
                           size={isFullHDScreens ? "1.75rem" : "1.4rem"}
@@ -135,7 +135,7 @@ const RemoveFromStyleWidget = ({ emptyStyle }) => {
                   )}
                   {stylingOuterwear && (
                     <Tooltip title="Remove" placement="top">
-                      <IconButton onClick={clearOuterwear}>
+                      <IconButton sx={{ padding: "8px 6px" }} onClick={clearOuterwear}>
                         <GiMonclerJacket
                           color={palette.neutral.medium}
                           size={isFullHDScreens ? "1.75rem" : "1.4rem"}
@@ -145,7 +145,7 @@ const RemoveFromStyleWidget = ({ emptyStyle }) => {
                   )}
                   {stylingOnePiece && (
                     <Tooltip title="Remove" placement="top">
-                      <IconButton onClick={clearOnePiece}>
+                      <IconButton sx={{ padding: "8px 6px" }} onClick={clearOnePiece}>
                         <GiLargeDress
                           color={palette.neutral.medium}
                           size={isFullHDScreens ? "1.75rem" : "1.4rem"}
@@ -155,7 +155,7 @@ const RemoveFromStyleWidget = ({ emptyStyle }) => {
                   )}
                   {stylingPants && (
                     <Tooltip title="Remove" placement="top">
-                      <IconButton onClick={clearPants}>
+                      <IconButton sx={{ padding: "8px 6px" }} onClick={clearPants}>
                         <GiArmoredPants
                           color={palette.neutral.medium}
                           size={isFullHDScreens ? "1.75rem" : "1.4rem"}
@@ -165,7 +165,7 @@ const RemoveFromStyleWidget = ({ emptyStyle }) => {
                   )}
                   {stylingShorts && (
                     <Tooltip title="Remove" placement="top">
-                      <IconButton onClick={clearShorts}>
+                      <IconButton sx={{ padding: "8px 6px" }} onClick={clearShorts}>
                         <GiShorts
                           color={palette.neutral.medium}
                           size={isFullHDScreens ? "1.75rem" : "1.4rem"}
@@ -175,7 +175,7 @@ const RemoveFromStyleWidget = ({ emptyStyle }) => {
                   )}
                   {stylingFootwear && (
                     <Tooltip title="Remove" placement="top">
-                      <IconButton onClick={clearFootwear}>
+                      <IconButton sx={{ padding: "8px 6px" }} onClick={clearFootwear}>
                         <GiConverseShoe
                           color={palette.neutral.medium}
                           size={isFullHDScreens ? "1.75rem" : "1.4rem"}
@@ -185,7 +185,7 @@ const RemoveFromStyleWidget = ({ emptyStyle }) => {
                   )}
                   {stylingHeadwear && (
                     <Tooltip title="Remove" placement="top">
-                      <IconButton onClick={clearHeadwear}>
+                      <IconButton sx={{ padding: "8px 6px" }} onClick={clearHeadwear}>
                         <GiBilledCap
                           color={palette.neutral.medium}
                           size={isFullHDScreens ? "1.75rem" : "1.4rem"}
@@ -215,14 +215,14 @@ const RemoveFromStyleWidget = ({ emptyStyle }) => {
               )}
             </Box>
             {isRemovingApparel && (
-              <IconButton onClick={handleRemoveClose}>
+              <IconButton sx={{ padding: "8px 6px" }} onClick={handleRemoveClose}>
                 <IoClose color={palette.neutral.medium} />
               </IconButton>
             )}
 
             {/* ----- Default Display Button ----- */}
             {!isRemovingApparel && (
-              <IconButton onClick={handleRemoveOpen}>
+              <IconButton sx={{ padding: "8px 6px" }} onClick={handleRemoveOpen}>
                 <MdOutlineChevronRight
                   size={isFullHDScreens ? "1.5rem" : "1.4rem"}
                   color={palette.neutral.medium}
