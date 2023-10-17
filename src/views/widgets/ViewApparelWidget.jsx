@@ -11,30 +11,29 @@ const ViewApparelWidget = ({ picturePath, name, apparelId, section, handleViewCl
   const displayName = name.replace(/\..*$/, "")
 
   return (
-    <Box margin={isNonMobileScreens ? "1rem 2rem" : 0.5} padding={isNonMobileScreens ? 3 : 2}>
-
+    <Box margin={isNonMobileScreens ? "1rem 2rem" : 0.5} padding={isNonMobileScreens ? 3 : 1}>
       {!isNonMobileScreens && (
-        <Box padding={"0.5rem 0.5rem 0 0.5rem"} display={"flex"} flexDirection={"row"} justifyContent={"flex-end"} alignItems={"center"}>
+        <Box padding={"0.25rem 0.25rem 0 0.25rem"} display={"flex"} flexDirection={"row"} justifyContent={"flex-end"} alignItems={"center"}>
 
           <IconButton onClick={handleViewClose}>
             <IoClose color={palette.neutral.dark} />
           </IconButton>
         </Box>
       )}
-
-      <Box margin={isNonMobileScreens ? 1 : 2}>
-        <Typography variant="h4" color={palette.neutral.main} textAlign={"center"}>{displayName}</Typography>
+      <Box margin={isNonMobileScreens ? 1 : "0 1.5rem 1rem 1.5rem"}>
         <Box display={"flex"} flexDirection={"row"} justifyContent={"center"}>
           {picturePath && (
             <img
-              width={isSmallMobileScreens ? "72%" : isHDScreens ? "60%" : isNonMobileScreens ? "100%" : "80%"}
+              width={isSmallMobileScreens ? "92%" : isHDScreens ? "60%" : isNonMobileScreens ? "100%" : "80%"}
               height="auto"
               alt="apparel"
-              style={{ borderRadius: "0.75rem", marginTop: "0.75rem", aspectRatio: "1" }}
+              style={{ borderRadius: "0.75rem", aspectRatio: "1" }}
               src={`https://slay-style-app.s3.us-west-1.amazonaws.com/${picturePath}`}
             />
           )}
         </Box>
+
+        <Typography variant="h4" color={palette.neutral.main} textAlign={"center"}>{displayName}</Typography>
       </Box>
     </Box>
   )
