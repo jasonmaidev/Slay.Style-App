@@ -95,7 +95,7 @@ const StylesPage = () => {
       {/* ----- Page Body ----- */}
       <Box
         width="100%"
-        padding={isNonMobileScreens ? "1rem 0" : "0 4%"}
+        padding={isNonMobileScreens ? "1rem 0" : "0 1%"}
         display={isNonMobileScreens ? "flex" : "block"}
         gap="1rem"
         flexDirection={"column"}
