@@ -356,7 +356,7 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
             />
           </Box>
         </Tooltip>
-        {!isNonMobileScreens && <Typography> *Use square images files with cropped-out background.</Typography>}
+        {!isNonMobileScreens && <Typography textAlign={"center"}> *Use square images files with cropped-out background.</Typography>}
       </Box>
 
 
@@ -521,7 +521,7 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
           alignItems={"center"}
           borderRadius={"6rem"}
         >
-          <Typography color={palette.neutral.medium}>Apparel uploads are currently disabled for guest users for development purposes.</Typography>
+          <Typography color={palette.neutral.medium}>Apparel upload is currently unavailable for guest users in V1.</Typography>
         </Box>
       )}
       {/* {guestUser && (
