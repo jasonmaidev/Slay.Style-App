@@ -112,7 +112,7 @@ const MobileFooterNavigation = ({ isHome, isWardrobe, isStyles, isRoadmap }) => 
 
           {isHome ? (
             <BottomNavigationAction
-              label="Roadmap"
+              label="V1"
               value="roadmap"
               icon={<TfiMapAlt size="1.5rem" />}
               onClick={getRoadmap}

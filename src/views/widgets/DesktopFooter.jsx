@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom"
 import { TfiMapAlt } from "react-icons/tfi"
-import { Paper, Box, useTheme, Typography, Button } from "@mui/material"
+import { Paper, Box, useTheme, Typography, Button, useMediaQuery } from "@mui/material"
 import FlexBetweenBox from "components/FlexBetweenBox"
 
 const DesktopFooter = ({ isLogin }) => {
   const navigate = useNavigate()
   const { palette } = useTheme()
+  const isNonMobileScreens = useMediaQuery("(min-width:1000px) and (max-height:2160px)")
 
   const getRoadmap = () => {
     navigate(`/roadmap`)
@@ -27,7 +28,7 @@ const DesktopFooter = ({ isLogin }) => {
       >
         <FlexBetweenBox>
           <Box display={"flex"} flexDirection={"row"} gap={4} alignItems={"center"}>
-            <Typography fontSize={"0.75rem"} fontWeight={500} color={palette.neutral.medium}>© 2023 Slay.Style</Typography>
+            {isNonMobileScreens && <Typography fontSize={"0.75rem"} fontWeight={500} color={palette.neutral.medium}>© 2023 Slay.Style</Typography>}
             {isLogin ? null : (
               <Button
                 onClick={getRoadmap}
