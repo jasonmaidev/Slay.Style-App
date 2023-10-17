@@ -35,16 +35,7 @@ const StylesWidget = ({ goToPrevious, goToNext, data, pageCount, pageNumber, set
         justifyContent={isNonMobileScreens ? "center" : "flex-start"}
         m={isNonMobileScreens ? "1rem" : "1.5rem 1rem 0 1rem"}
       >
-        {pageCount ? (
-          <Typography
-            variant={isNonMobileScreens ? "h4" : "h5"}
-            color={palette.neutral.dark}
-            fontWeight={400}
-            pb={"1rem"}
-          >
-            {sortByOccasion ? stylesTitle : "All"} Styles
-          </Typography>
-        ) : (
+        {pageCount ? null : (
           <Typography
             variant={isNonMobileScreens ? "h4" : "h5"}
             color={palette.neutral.dark}
