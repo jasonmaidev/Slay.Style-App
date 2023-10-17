@@ -1,8 +1,8 @@
 ## Welcome to Slay.Style
 
-A digital fast-fashion app for unlocking your `ultimate style`!
+Make the decision of `how to dress` one less stress! Say goodbye to the days of shuffling through tens if not hundreds of pieces of clothes just to find the right outfit!
 
-Make the decision of `how to dress` one less stress!
+Slay.Style is a digital fast-fashion app for unlocking your `ultimate style`!
 
 Try it out at [https://Slay.Style](https://slay.style).
 
@@ -16,7 +16,7 @@ If you've found this repository, it is more than likely you've also received an 
 
 ### Getting Started
 
-Once you've logged in, simply head over to the `Wardrobe` page and then select `Reset Wardrobe` if you are on a desktop device or simply tap the button which will be located on the homepage if you are on a smaryphone. Doing so will replenish the current wardrobe with a set of sample apparels that will enable you create different outfit styles (since apparel uploads have been temporarily disabled for security purposes).
+Once you've logged in, simply head over to the `Wardrobe` page and then select `Reset Wardrobe` if you are on a desktop device or simply tap the `Reset Wardrobe` button which will be located on the homepage if you are on a smartphone. Doing so will replenish your current wardrobe with a set of sample apparels that will enable you to create different outfit styles (since apparel uploads have been temporarily disabled for security purposes).
 
 Guest users have 2 instances of `Reset Wardrobe`s per day in case of accidental apparel deletions that can occur at times.
 Apparel `uploads` are currently disabled for guest accounts but will be available again once data sanitization is fully implemented.
