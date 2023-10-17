@@ -125,7 +125,7 @@ const DeleteApparelWidget = ({ picturePath, apparelId, section, handleDeleteClos
 
   return (
     <Box margin={isNonMobileScreens ? "0 2rem 1rem 2rem" : "1rem"} padding={isNonMobileScreens ? 4 : 1}>
-      <Box padding={isNonMobileScreens ? 1 : 0.5} margin={1}>
+      <Box padding={isNonMobileScreens ? 1 : 0.5} margin={isNonMobileScreens ? 1 : "0 1rem"}>
 
         {/* ----- Text Input Field ----- */}
         <Box
@@ -135,14 +135,14 @@ const DeleteApparelWidget = ({ picturePath, apparelId, section, handleDeleteClos
           flexWrap={"wrap"}
         >
           <Typography>
-            <PiWarning color={palette.neutral.dark} size={isSmallMobileScreens ? "3rem" : "3rem"} />
+            <PiWarning color={palette.neutral.dark} size={isSmallMobileScreens ? "2.5rem" : "3rem"} />
           </Typography>
-          <Typography color={palette.neutral.dark} fontWeight={600} fontSize={isNonMobileScreens ? "2rem" : "1.5rem"} padding={"0 1rem"}>
+          <Typography color={palette.neutral.dark} fontWeight={600} fontSize={isNonMobileScreens ? "2rem" : "1.5rem"} padding={"0 0.5rem"}>
             Are you sure?
           </Typography>
         </Box>
         <Typography textAlign={"center"} color={palette.neutral.main} fontWeight={600} fontSize={"0.75rem"}>
-          *Please note that removing an apparel may affect your saved styles.
+          *Please note that deleting an apparel may alter some saved styles.
         </Typography>
 
         {picturePath && (
@@ -155,12 +155,12 @@ const DeleteApparelWidget = ({ picturePath, apparelId, section, handleDeleteClos
           />
         )}
 
-        <FlexEvenlyBox pt={2} gap={isNonMobileScreens ? undefined : 2}>
+        <FlexEvenlyBox pt={0.5} gap={isNonMobileScreens ? undefined : 2}>
           <Button
             disabled={dailyAllowedDeletes < 1 && guestUser}
             onClick={guestUser ? handleDeleteDemoApparel : handleDeleteApparel}
             sx={{
-              padding: "1rem 4rem",
+              padding: isNonMobileScreens ? "1rem 4rem" : "1rem 2rem",
               borderRadius: "6rem",
               fontWeight: 600,
               color: palette.background.alt,
@@ -178,7 +178,7 @@ const DeleteApparelWidget = ({ picturePath, apparelId, section, handleDeleteClos
             variant="outlined"
             onClick={handleDeleteClose}
             sx={{
-              padding: "1rem 4rem",
+              padding: isNonMobileScreens ? "1rem 4rem" : "1rem 2rem",
               borderRadius: "6rem",
               fontWeight: 600,
               color: palette.neutral.dark,
