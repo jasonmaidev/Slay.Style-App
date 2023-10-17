@@ -33,7 +33,7 @@ const StylesWidget = ({ goToPrevious, goToNext, data, pageCount, pageNumber, set
         display={"flex"}
         flexDirection={"row"}
         justifyContent={isNonMobileScreens ? "center" : "flex-start"}
-        m={isNonMobileScreens ? "1rem" : "1.5rem 0.5rem 0 0.5rem"}
+        m={isNonMobileScreens ? "1rem" : "1rem 0.5rem 0 0.5rem"}
       >
         {pageCount ? (
           <Typography
