@@ -81,7 +81,7 @@ const Navbar = ({
       zIndex={theme.zIndex.drawer + 1}
       sx={{ boxShadow: "6px 6px 12px rgba(0,0,0, 0.05)" }}
     >
-      <FlexBetweenBox gap={isNonMobileScreens ? "1.75rem" : "25%"}>
+      <FlexBetweenBox gap="6%">
 
         {/* ----- Logo ----- */}
         <Button
@@ -98,7 +98,7 @@ const Navbar = ({
         </Button>
 
         {/* ----- App Slogan ----- */}
-        <Typography fontSize={"0.75rem"} textAlign={"center"} fontWeight={700} color={theme.palette.neutral.dark}>Glow Up Fashion Made Simple</Typography>
+        <Typography fontSize={"0.75rem"} fontWeight={700} color={theme.palette.neutral.dark}>Glow Up Fashion Made Simple</Typography>
       </FlexBetweenBox>
 
 
