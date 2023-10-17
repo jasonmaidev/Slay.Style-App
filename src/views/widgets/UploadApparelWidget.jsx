@@ -356,7 +356,7 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
             />
           </Box>
         </Tooltip>
-        {!isNonMobileScreens && <Typography> *Use square images(.png or .webp) files with a clear background.</Typography>}
+        {!isNonMobileScreens && <Typography> *Use square images files with cropped-out background.</Typography>}
       </Box>
 
 
@@ -400,7 +400,7 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
                   margin: "0 0.25rem",
                   fontWeight: 500
                 }}>
-                  **Use square images with a clear background
+                  **Use square images files with cropped-out background.
                 </h3>
               }
             >
@@ -439,7 +439,7 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
                             color: palette.neutral.dark
                           }}
                         >
-                          Drop new apparel image here
+                          Drop apparel image here
                         </Typography>
                       </Box>
                       <Typography
@@ -521,7 +521,7 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
           alignItems={"center"}
           borderRadius={"6rem"}
         >
-          <Typography color={palette.neutral.medium}>Apparel uploads are currently disabled for guest users but will be available again once data sanitization is fully implemented.</Typography>
+          <Typography color={palette.neutral.medium}>Apparel uploads are currently disabled for guest users for development purposes.</Typography>
         </Box>
       )}
       {/* {guestUser && (
