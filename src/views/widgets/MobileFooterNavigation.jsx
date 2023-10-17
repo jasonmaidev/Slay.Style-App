@@ -153,7 +153,7 @@ const MobileFooterNavigation = ({ isHome, isWardrobe, isStyles, isRoadmap }) => 
               color={palette.neutral.light}
               loading={true}
               cssOverride={dialogoverride}
-              size={200}
+              size={50}
               margin={20}
               aria-label="Loading Spinner"
               data-testid="loader"
@@ -195,7 +195,7 @@ const MobileFooterNavigation = ({ isHome, isWardrobe, isStyles, isRoadmap }) => 
             color={palette.neutral.light}
             loading={true}
             cssOverride={dialogoverride}
-            size={200}
+            size={50}
             margin={20}
             aria-label="Loading Spinner"
             data-testid="loader"

@@ -221,7 +221,7 @@ const WardrobePage = () => {
                       color={palette.neutral.light}
                       loading={true}
                       cssOverride={stylewidgetoverride}
-                      size={20}
+                      size={50}
                       margin={20}
                       aria-label="Loading Spinner"
                       data-testid="loader"
@@ -320,7 +320,8 @@ const WardrobePage = () => {
                   color={palette.neutral.light}
                   loading={true}
                   cssOverride={stylewidgetoverride}
-                  size={200}
+                  size={50}
+                  margin={20}
                   aria-label="Loading Spinner"
                   data-testid="loader"
                 />
@@ -334,7 +335,8 @@ const WardrobePage = () => {
                     color={palette.neutral.light}
                     loading={true}
                     cssOverride={stylewidgetoverride}
-                    size={200}
+                    size={50}
+                    margin={20}
                     aria-label="Loading Spinner"
                     data-testid="loader"
                   />
