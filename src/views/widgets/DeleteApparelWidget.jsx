@@ -142,7 +142,7 @@ const DeleteApparelWidget = ({ picturePath, apparelId, section, handleDeleteClos
           </Typography>
         </Box>
         <Typography textAlign={"center"} color={palette.neutral.main} fontWeight={600} fontSize={"0.75rem"}>
-          *Please note that deleting an apparel may alter some saved styles.
+          *Deleting an apparel may alter some of the saved styles.
         </Typography>
 
         {picturePath && (
