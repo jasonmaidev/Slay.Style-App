@@ -145,7 +145,7 @@ const ResetWardrobe = ({ handleResetWardrobeClose, _id }) => {
           <IoClose color={palette.neutral.dark} size={isSmallMobileScreens ? "1.5rem" : "2rem"} />
         </IconButton>
       </Box>
-      <Box padding={"0 4rem"} margin={"0 1rem 2rem 1rem"}>
+      <Box padding={isNonMobileScreens ? "0 4rem" : "0 0.5rem"} margin={"0 1rem 2rem 1rem"}>
         {/* ----- Reset Confirmation ----- */}
         <Box
           display={"flex"}
@@ -173,7 +173,7 @@ const ResetWardrobe = ({ handleResetWardrobeClose, _id }) => {
             disabled={(dailyAllowedResets < 1 && guestUser) || openSnackbarWait || openSnackbarComplete}
             onClick={handleResetWardrobe}
             sx={{
-              padding: "1rem 4rem",
+              padding: isNonMobileScreens ? "1rem 4rem" : "1rem 2rem",
               borderRadius: "6rem",
               color: palette.background.alt,
               borderColor: palette.neutral.dark,
@@ -188,9 +188,9 @@ const ResetWardrobe = ({ handleResetWardrobeClose, _id }) => {
           </Button>
           <Button
             variant="outlined"
-            onClick={() => dispatch(setDailyAllowedResets({ dailyAllowedResets: 2 }))}
+            onClick={handleResetWardrobeClose}
             sx={{
-              padding: "1rem 4rem",
+              padding: isNonMobileScreens ? "1rem 4rem" : "1rem 2rem",
               borderRadius: "6rem",
               color: palette.neutral.dark,
               borderColor: palette.neutral.dark,
