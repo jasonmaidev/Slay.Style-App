@@ -1,6 +1,6 @@
 ## Welcome to Slay.Style
 
-Make the decision of `how to dress` one less stress! Say goodbye to the days of shuffling through tens if not hundreds of pieces of clothes just to find the right outfit!
+Make the decision of `how to dress`, one less stress! Say goodbye to the days of shuffling through tens if not hundreds of pieces of clothes just to find the right outfit!
 
 Slay.Style is a digital fast-fashion app for unlocking your `ultimate style`!
 
