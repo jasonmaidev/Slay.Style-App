@@ -366,6 +366,7 @@ const Navbar = ({
               Profile
             </Button>
             <Button
+              onClick={() => dispatch(setLogout())}
               startIcon={<TbLogout />}
               sx={{
                 color: theme.palette.neutral.dark,
