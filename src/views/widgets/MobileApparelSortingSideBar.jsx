@@ -56,34 +56,34 @@ const MobileApparelSortingSideBar = ({ updateApparelsDialogOpen }) => {
       flexDirection={"column"}
       flexBasis={isSmallMobileScreens ? "4%" : "8%"}
       justifyContent={"center"}
-      m={isSmallMobileScreens ? "0.5rem 0.5rem 3rem 0.5rem" : "1rem 0"}
+      m={isSmallMobileScreens ? "1rem 0.5rem 2.5rem 0.5rem" : "1.5rem 0"}
       p={isSmallMobileScreens ? "0.25rem" : "0.5rem 0.25rem"}
       zIndex={10}
       borderRadius={10}
       border={`solid 1px ${palette.neutral.medium}`}
     >
-      <IconButton sx={{ padding: "4px 8px" }} onClick={handleViewHeadwearApparels}>
+      <IconButton sx={{ padding: "5px 8px" }} onClick={handleViewHeadwearApparels}>
         <GiBilledCap size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
       </IconButton>
-      <IconButton sx={{ padding: "4px 8px" }} onClick={handleViewShortTopsApparels}>
+      <IconButton sx={{ padding: "5px 8px" }} onClick={handleViewShortTopsApparels}>
         <GiPoloShirt size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
       </IconButton>
-      <IconButton sx={{ padding: "4px 8px" }} onClick={handleViewLongTopsApparels}>
+      <IconButton sx={{ padding: "5px 8px" }} onClick={handleViewLongTopsApparels}>
         <GiShirt size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
       </IconButton>
-      <IconButton sx={{ padding: "4px 8px" }} onClick={handleViewOuterwearApparels}>
+      <IconButton sx={{ padding: "5px 8px" }} onClick={handleViewOuterwearApparels}>
         <GiMonclerJacket size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
       </IconButton>
-      <IconButton sx={{ padding: "4px 8px" }} onClick={handleViewOnePieceApparels}>
+      <IconButton sx={{ padding: "5px 8px" }} onClick={handleViewOnePieceApparels}>
         <GiLargeDress size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
       </IconButton>
-      <IconButton sx={{ padding: "4px 8px" }} onClick={handleViewPantsApparels}>
+      <IconButton sx={{ padding: "5px 8px" }} onClick={handleViewPantsApparels}>
         <GiArmoredPants size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
       </IconButton>
-      <IconButton sx={{ padding: "4px 8px" }} onClick={handleViewShortsApparels}>
+      <IconButton sx={{ padding: "5px 8px" }} onClick={handleViewShortsApparels}>
         <GiUnderwearShorts size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
       </IconButton>
-      <IconButton sx={{ padding: "4px 8px" }} onClick={handleViewFootwearApparels}>
+      <IconButton sx={{ padding: "5px 8px" }} onClick={handleViewFootwearApparels}>
         <GiConverseShoe size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
       </IconButton>
     </Box>
