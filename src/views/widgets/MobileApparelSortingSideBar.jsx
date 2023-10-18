@@ -56,8 +56,8 @@ const MobileApparelSortingSideBar = ({ updateApparelsDialogOpen }) => {
       flexDirection={"column"}
       flexBasis={isSmallMobileScreens ? "4%" : "8%"}
       justifyContent={"center"}
-      m={isSmallMobileScreens ? "1rem 0.5rem 2.5rem 0.5rem" : "1.5rem 0"}
-      p={isSmallMobileScreens ? "0.25rem" : "0.5rem 0.25rem"}
+      m={isSmallMobileScreens ? "1.5rem 0.5rem 3rem 0.5rem" : "2rem 0"}
+      p={"0.25rem"}
       zIndex={10}
       borderRadius={10}
       border={`solid 1px ${palette.neutral.medium}`}
