@@ -139,6 +139,7 @@ const RoadmapWidget = () => {
                     <Typography pb={1}><FiCircle /> Edge detection post image processing.</Typography>
                     <Typography pb={1}><FiCircle /> User profile expansion.</Typography>
                     <Typography pb={1}><FiCircle /> Transition animations.</Typography>
+                    <Typography pb={1}><FiCircle /> UI refinement.</Typography>
                     <Typography pb={1}><FiCircle /> Full public access and account credits system.</Typography>
                   </Box>
                 </Box>
