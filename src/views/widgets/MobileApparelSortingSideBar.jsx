@@ -62,28 +62,28 @@ const MobileApparelSortingSideBar = ({ updateApparelsDialogOpen }) => {
       borderRadius={10}
       border={`solid 1px ${palette.neutral.medium}`}
     >
-      <IconButton onClick={handleViewHeadwearApparels}>
+      <IconButton sx={{ padding: "4px 8px" }} onClick={handleViewHeadwearApparels}>
         <GiBilledCap size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
       </IconButton>
-      <IconButton onClick={handleViewShortTopsApparels}>
+      <IconButton sx={{ padding: "4px 8px" }} onClick={handleViewShortTopsApparels}>
         <GiPoloShirt size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
       </IconButton>
-      <IconButton onClick={handleViewLongTopsApparels}>
+      <IconButton sx={{ padding: "4px 8px" }} onClick={handleViewLongTopsApparels}>
         <GiShirt size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
       </IconButton>
-      <IconButton onClick={handleViewOuterwearApparels}>
+      <IconButton sx={{ padding: "4px 8px" }} onClick={handleViewOuterwearApparels}>
         <GiMonclerJacket size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
       </IconButton>
-      <IconButton onClick={handleViewOnePieceApparels}>
+      <IconButton sx={{ padding: "4px 8px" }} onClick={handleViewOnePieceApparels}>
         <GiLargeDress size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
       </IconButton>
-      <IconButton onClick={handleViewPantsApparels}>
+      <IconButton sx={{ padding: "4px 8px" }} onClick={handleViewPantsApparels}>
         <GiArmoredPants size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
       </IconButton>
-      <IconButton onClick={handleViewShortsApparels}>
+      <IconButton sx={{ padding: "4px 8px" }} onClick={handleViewShortsApparels}>
         <GiUnderwearShorts size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
       </IconButton>
-      <IconButton onClick={handleViewFootwearApparels}>
+      <IconButton sx={{ padding: "4px 8px" }} onClick={handleViewFootwearApparels}>
         <GiConverseShoe size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
       </IconButton>
     </Box>
