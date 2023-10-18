@@ -210,7 +210,7 @@ const EditStyleWidget = ({ userId, occasions }) => {
         </IconButton>
       </FlexBetweenBox>
 
-      <FlexEvenlyBox>
+      <FlexEvenlyBox gap={2} p={"0 0.5rem"}>
         <RandomizeStyleButton data={data} />
         <MultipleSelect updateSuitableFor={updateSuitableFor} />
         <Button
