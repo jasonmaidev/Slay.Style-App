@@ -72,7 +72,7 @@ export default function MultipleSelect({ updateSuitableFor }) {
           multiple
           value={suitableFor}
           onChange={handleChange}
-          input={<OutlinedInput label="Suitable For" />}
+          input={<OutlinedInput sx={isNonMobileScreens ? undefined : { pb: "0.75rem" }} label="Suitable For" />}
           MenuProps={MenuProps}
           size={isSmallMobileScreens ? "small" : "medium"}
         >

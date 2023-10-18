@@ -38,6 +38,7 @@ const ApparelSelectDialog = styled(Dialog)(({ theme }) => ({
 
 const MobileCreateStyleWidget = ({ userId }) => {
   const isSmallMobileScreens = useMediaQuery("(max-width:800px) and (max-height:800px)")
+  const isNonMobileScreens = useMediaQuery("(min-width:1000px) and (max-height:2160px)")
   const token = useSelector((state) => state.token)
   const { palette } = useTheme()
   const dispatch = useDispatch()
@@ -314,16 +315,16 @@ const MobileCreateStyleWidget = ({ userId }) => {
               display={"flex"}
               flexDirection={"row"}
               justifyContent={"center"}
-              margin={isSmallMobileScreens ? "3rem" : "2rem"}
+              margin={isSmallMobileScreens ? "1.5rem" : "2rem"}
             >
               <Button
                 variant="outlined"
                 size="large"
                 disabled
-                endIcon={<FaArrowRight size={isSmallMobileScreens ? "1.5rem" : "1rem"} margin={"1rem"} />}
+                endIcon={<FaArrowRight size={"1rem"} />}
                 sx={isSmallMobileScreens ? {
                   margin: 0,
-                  padding: "4rem 1.5rem",
+                  padding: "5rem 2rem",
                   borderRadius: "2rem",
                 } : {
                   margin: "0 0.5rem",
@@ -331,7 +332,7 @@ const MobileCreateStyleWidget = ({ userId }) => {
                   borderRadius: "2rem",
                 }}
               >
-                <Typography >
+                <Typography fontSize={!isNonMobileScreens ? "0.75rem" : undefined}>
                   Select an apparel
                 </Typography>
               </Button>
