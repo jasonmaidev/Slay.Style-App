@@ -66,7 +66,7 @@ const LoginPage = () => {
           />
 
           {/* ----- App Slogan ----- */}
-          <Typography fontSize={"0.75rem"} fontWeight={700} color={theme.palette.neutral.dark}>How-to-Dress Becomes One Less Stress</Typography>
+          <Typography fontSize={"0.75rem"} fontWeight={700} color={theme.palette.neutral.dark}>Glow Up Fashion Made Simple</Typography>
         </FlexBetweenBox>
         {isNonMobileScreens && (
           <Box display={"flex"} flexDirection={"row"} gap={4}>
