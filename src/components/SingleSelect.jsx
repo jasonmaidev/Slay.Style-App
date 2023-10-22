@@ -57,7 +57,7 @@ export default function SingleSelect({ updatePageNumber }) {
           <MenuItem value="">
             <MdClear /> Clear
           </MenuItem>
-          <MenuItem value={"favorite"}>favorite</MenuItem>
+          {/* <MenuItem value={"favorite"}>favorite</MenuItem> */}
           <MenuItem value={"casual"}>casual</MenuItem>
           <MenuItem value={"formal"}>formal</MenuItem>
           <MenuItem value={"spring"}>spring</MenuItem>

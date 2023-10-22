@@ -93,9 +93,9 @@ const MobileOccasionDialog = ({ handleFilterDialogClose }) => {
         alignContent={"flex-start"}
         alignItems={"flex-start"}
       >
-        <Button fullWidth style={mobileSortButtonStyles} variant="text" onClick={sortByFavorites}>
+        {/* <Button fullWidth style={mobileSortButtonStyles} variant="text" onClick={sortByFavorites}>
           favorite
-        </Button>
+        </Button> */}
         <Button fullWidth style={mobileSortButtonStyles} variant="text" onClick={sortByCasual}>
           casual
         </Button>
