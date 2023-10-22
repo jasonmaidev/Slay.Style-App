@@ -272,7 +272,8 @@ const RoadmapWidget = () => {
               <Typography pb={1.5}><FiCircle /> Edge detection post image processing.</Typography>
               <Typography pb={1.5}><FiCircle /> User profile expansion.</Typography>
               <Typography pb={1.5}><FiCircle /> Transition animations.</Typography>
-              <Typography pb={1.5}><FiCircle /> Swipe motion.</Typography>
+              <Typography pb={1.5}><FiCircle /> Mobile UI swipe motion.</Typography>
+              <Typography pb={1.5}><FiCircle /> Server side all user account type limitations and validation.</Typography>
               <Typography pb={1.5}><FiCircle /> Full public access and account credits system.</Typography>
             </Box>
           </Box>
