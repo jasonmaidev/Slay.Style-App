@@ -18,7 +18,17 @@ import {
   setDailyAllowedResets,
   setLogout
 } from "state"
-import { dailyGuestAllowedResets, dailyGuestAllowedUploads, dailyGuestAllowedSaves, dailyGuestAllowedEdits, dailyGuestAllowedDeletes } from "config/guestAccountCredits"
+import {
+  dailyGuestAllowedResets,
+  dailyGuestAllowedUploads,
+  dailyGuestAllowedSaves,
+  dailyGuestAllowedEdits,
+  dailyGuestAllowedDeletes,
+  dailyFriendAllowedUploads,
+  dailyFriendAllowedSaves,
+  dailyFriendAllowedEdits,
+  dailyFriendAllowedDeletes
+} from "config/userAccountCredits"
 import MultipleSelect from "components/MultipleSelect"
 import RemoveFromStyleWidget from "views/widgets/RemoveFromStyleWidget"
 import RandomizeStyleButton from "components/RandomizeStyleButton"
@@ -69,22 +79,34 @@ const EditStyleWidget = ({ userId, occasions }) => {
 
   /* Guest User State */
   const guestUser = useSelector((state) => state.user.guestUser)
+  const friendUser = useSelector((state) => state.user.friendUser)
   const dailyAllowedEdits = useSelector((state) => state.dailyAllowedEdits)
   const nextRefreshDate = useSelector((state) => state.nextRefreshDate)
 
-  const refreshGuestActions = () => {
-    dispatch(setDailyAllowedResets({ dailyAllowedResets: dailyGuestAllowedResets }))
-    dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyGuestAllowedUploads }))
-    dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyGuestAllowedSaves }))
-    dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyGuestAllowedEdits }))
-    dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyGuestAllowedDeletes }))
-    dispatch(setNextRefreshDate({ nextRefreshDate: null }))
+  const refreshDailyActions = () => {
+    if (guestUser === true) {
+      dispatch(setDailyAllowedResets({ dailyAllowedResets: dailyGuestAllowedResets }))
+      dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyGuestAllowedUploads }))
+      dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyGuestAllowedSaves }))
+      dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyGuestAllowedEdits }))
+      dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyGuestAllowedDeletes }))
+      dispatch(setNextRefreshDate({ nextRefreshDate: null }))
+    } else if (friendUser === true) {
+      dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyFriendAllowedUploads }))
+      dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyFriendAllowedSaves }))
+      dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyFriendAllowedEdits }))
+      dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyFriendAllowedDeletes }))
+      dispatch(setNextRefreshDate({ nextRefreshDate: null }))
+    } else {
+      return
+    }
   }
+
 
   // Countdown renderer callback with condition
   const renderer = ({ hours, minutes, seconds, completed }) => {
     if (completed) {
-      refreshGuestActions()
+      refreshDailyActions()
     } else {
       return (
         <span>

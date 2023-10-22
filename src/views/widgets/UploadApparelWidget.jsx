@@ -28,7 +28,17 @@ import {
   setNextRefreshDate,
   setDailyAllowedResets
 } from "state"
-import { dailyGuestAllowedResets, dailyGuestAllowedUploads, dailyGuestAllowedSaves, dailyGuestAllowedEdits, dailyGuestAllowedDeletes } from "config/guestAccountCredits"
+import {
+  dailyGuestAllowedResets,
+  dailyGuestAllowedUploads,
+  dailyGuestAllowedSaves,
+  dailyGuestAllowedEdits,
+  dailyGuestAllowedDeletes,
+  dailyFriendAllowedUploads,
+  dailyFriendAllowedSaves,
+  dailyFriendAllowedEdits,
+  dailyFriendAllowedDeletes
+} from "config/userAccountCredits"
 import { RadioButton } from "components/RadioButton"
 import FlexBetweenBox from "components/FlexBetweenBox"
 import apiUrl from "config/api"
@@ -60,22 +70,33 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
 
   /* Guest User State */
   const guestUser = useSelector((state) => state.user.guestUser)
+  const friendUser = useSelector((state) => state.user.friendUser)
   const dailyAllowedUploads = useSelector((state) => state.dailyAllowedUploads)
   const nextRefreshDate = useSelector((state) => state.nextRefreshDate)
 
-  const refreshGuestActions = () => {
-    dispatch(setDailyAllowedResets({ dailyAllowedResets: dailyGuestAllowedResets }))
-    dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyGuestAllowedUploads }))
-    dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyGuestAllowedSaves }))
-    dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyGuestAllowedEdits }))
-    dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyGuestAllowedDeletes }))
-    dispatch(setNextRefreshDate({ nextRefreshDate: null }))
+  const refreshDailyActions = () => {
+    if (guestUser === true) {
+      dispatch(setDailyAllowedResets({ dailyAllowedResets: dailyGuestAllowedResets }))
+      dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyGuestAllowedUploads }))
+      dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyGuestAllowedSaves }))
+      dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyGuestAllowedEdits }))
+      dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyGuestAllowedDeletes }))
+      dispatch(setNextRefreshDate({ nextRefreshDate: null }))
+    } else if (friendUser === true) {
+      dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyFriendAllowedUploads }))
+      dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyFriendAllowedSaves }))
+      dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyFriendAllowedEdits }))
+      dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyFriendAllowedDeletes }))
+      dispatch(setNextRefreshDate({ nextRefreshDate: null }))
+    } else {
+      return
+    }
   }
 
   // Countdown renderer callback with condition
   const renderer = ({ hours, minutes, seconds, completed }) => {
     if (completed) {
-      refreshGuestActions()
+      refreshDailyActions()
     } else {
       return (
         <span>
@@ -513,7 +534,7 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
         />
       </div>
 
-      {guestUser && (
+      {guestUser === true && (
         <Box
           display={"flex"}
           flexDirection={"row"}

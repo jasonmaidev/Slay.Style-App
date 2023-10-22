@@ -17,7 +17,17 @@ import {
   setNextRefreshDate,
 } from "state"
 import Navbar from "views/navbar"
-import { dailyGuestAllowedResets, dailyGuestAllowedUploads, dailyGuestAllowedSaves, dailyGuestAllowedEdits, dailyGuestAllowedDeletes } from "config/guestAccountCredits"
+import {
+  dailyGuestAllowedResets,
+  dailyGuestAllowedUploads,
+  dailyGuestAllowedSaves,
+  dailyGuestAllowedEdits,
+  dailyGuestAllowedDeletes,
+  dailyFriendAllowedUploads,
+  dailyFriendAllowedSaves,
+  dailyFriendAllowedEdits,
+  dailyFriendAllowedDeletes
+} from "config/userAccountCredits"
 const MobileFooterNavigation = lazy(() => import("../widgets/MobileFooterNavigation"))
 const DesktopFooter = lazy(() => import("../widgets/DesktopFooter"))
 const ResetWardrobeWidget = lazy(() => import("views/widgets/ResetWardrobeWidget"))
@@ -58,13 +68,23 @@ const HomePage = () => {
     setResetWardrobeOpen(false)
   }
 
-  const refreshGuestActions = () => {
-    dispatch(setDailyAllowedResets({ dailyAllowedResets: dailyGuestAllowedResets }))
-    dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyGuestAllowedUploads }))
-    dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyGuestAllowedSaves }))
-    dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyGuestAllowedEdits }))
-    dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyGuestAllowedDeletes }))
-    dispatch(setNextRefreshDate({ nextRefreshDate: null }))
+  const refreshDailyActions = () => {
+    if (guestUser === true) {
+      dispatch(setDailyAllowedResets({ dailyAllowedResets: dailyGuestAllowedResets }))
+      dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyGuestAllowedUploads }))
+      dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyGuestAllowedSaves }))
+      dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyGuestAllowedEdits }))
+      dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyGuestAllowedDeletes }))
+      dispatch(setNextRefreshDate({ nextRefreshDate: null }))
+    } else if (friendUser === true) {
+      dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyFriendAllowedUploads }))
+      dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyFriendAllowedSaves }))
+      dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyFriendAllowedEdits }))
+      dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyFriendAllowedDeletes }))
+      dispatch(setNextRefreshDate({ nextRefreshDate: null }))
+    } else {
+      return
+    }
   }
 
   const goToCreateStyle = () => {
@@ -91,7 +111,7 @@ const HomePage = () => {
       dispatch(setNextRefreshDate({ nextRefreshDate: Math.floor(Date.now()) + 86400000 }))
     }
     if (Math.floor(Date.now()) > parseInt(nextRefreshDate)) {
-      refreshGuestActions()
+      refreshDailyActions()
       dispatch(setNextRefreshDate({ nextRefreshDate: Math.floor(Date.now()) + 86400000 }))
     }
     return

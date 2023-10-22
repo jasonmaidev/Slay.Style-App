@@ -22,7 +22,17 @@ import {
   setStylingShorts,
   setStylingFootwear
 } from "state"
-import { dailyGuestAllowedResets, dailyGuestAllowedUploads, dailyGuestAllowedSaves, dailyGuestAllowedEdits, dailyGuestAllowedDeletes } from "config/guestAccountCredits"
+import {
+  dailyGuestAllowedResets,
+  dailyGuestAllowedUploads,
+  dailyGuestAllowedSaves,
+  dailyGuestAllowedEdits,
+  dailyGuestAllowedDeletes,
+  dailyFriendAllowedUploads,
+  dailyFriendAllowedSaves,
+  dailyFriendAllowedEdits,
+  dailyFriendAllowedDeletes
+} from "config/userAccountCredits"
 import Countdown from "react-countdown"
 import apiUrl from "config/api"
 
@@ -37,22 +47,33 @@ const ResetWardrobe = ({ handleResetWardrobeClose, _id }) => {
 
   /* Guest User State */
   const guestUser = useSelector((state) => state.user.guestUser)
+  const friendUser = useSelector((state) => state.user.friendUser)
   const nextRefreshDate = useSelector((state) => state.nextRefreshDate)
   const dailyAllowedResets = useSelector((state) => state.dailyAllowedResets)
 
-  const refreshGuestActions = () => {
-    dispatch(setDailyAllowedResets({ dailyAllowedResets: dailyGuestAllowedResets }))
-    dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyGuestAllowedUploads }))
-    dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyGuestAllowedSaves }))
-    dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyGuestAllowedEdits }))
-    dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyGuestAllowedDeletes }))
-    dispatch(setNextRefreshDate({ nextRefreshDate: null }))
+  const refreshDailyActions = () => {
+    if (guestUser === true) {
+      dispatch(setDailyAllowedResets({ dailyAllowedResets: dailyGuestAllowedResets }))
+      dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyGuestAllowedUploads }))
+      dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyGuestAllowedSaves }))
+      dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyGuestAllowedEdits }))
+      dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyGuestAllowedDeletes }))
+      dispatch(setNextRefreshDate({ nextRefreshDate: null }))
+    } else if (friendUser === true) {
+      dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyFriendAllowedUploads }))
+      dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyFriendAllowedSaves }))
+      dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyFriendAllowedEdits }))
+      dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyFriendAllowedDeletes }))
+      dispatch(setNextRefreshDate({ nextRefreshDate: null }))
+    } else {
+      return
+    }
   }
 
   // Countdown renderer callback with condition
   const renderer = ({ hours, minutes, seconds, completed }) => {
     if (completed) {
-      refreshGuestActions()
+      refreshDailyActions()
     } else {
       return (
         <span>
@@ -214,7 +235,7 @@ const ResetWardrobe = ({ handleResetWardrobeClose, _id }) => {
           margin={"0 1rem 1rem 1rem"}
           gap={2}
         >
-          <Typography color={dailyAllowedResets === 1 ? palette.secondary.main : palette.neutral.dark}>
+          <Typography color={dailyAllowedResets <= 1 ? palette.secondary.main : palette.neutral.dark}>
             Resets Remaining: {dailyAllowedResets}
           </Typography>
           {dailyAllowedResets < 1 && (
