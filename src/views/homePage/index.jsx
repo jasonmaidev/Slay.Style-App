@@ -42,7 +42,12 @@ const HomePage = () => {
   const mode = useSelector((state) => state.mode)
   const nextRefreshDate = useSelector((state) => state.nextRefreshDate)
   const dailyAllowedResets = useSelector((state) => state.dailyAllowedResets)
+  const dailyAllowedUploads = useSelector((state) => state.dailyAllowedUploads)
+  const dailyAllowedSaves = useSelector((state) => state.dailyAllowedSaves)
+  const dailyAllowedEdits = useSelector((state) => state.dailyAllowedEdits)
+  const dailyAllowedDeletes = useSelector((state) => state.dailyAllowedDeletes)
   const guestUser = useSelector((state) => state.user.guestUser)
+  const friendUser = useSelector((state) => state.user.friendUser)
 
   /* Reset Wardrobe Popup Dialog State */
   const [resetWardrobeOpen, setResetWardrobeOpen] = useState(false)
@@ -95,9 +100,33 @@ const HomePage = () => {
   return (
 
     <Box>
-
       <Navbar />
       {/* ----- Page Body ----- */}
+      {(isNonMobileScreens && (guestUser === true || friendUser === true)) &&
+        <Box pt={isNonMobileScreens ? undefined : 2} display={"flex"} flexDirection={isNonMobileScreens ? "row" : "column"} justifyContent={"flex-end"} alignItems={"center"}>
+          <Typography color={palette.neutral.medium}>Daily Actions Remaining:</Typography>
+          <Box
+            m={isNonMobileScreens ? 4 : 2}
+            p={"1rem 2rem"}
+            display={"flex"}
+            flexDirection={"row"}
+            justifyContent={"flex-end"}
+            gap={2}
+            border={`solid 1px ${palette.neutral.medium}`}
+            borderRadius={"6rem"}
+          >
+            <Typography color={palette.neutral.medium}>Uploads:</Typography>
+            <Typography color={palette.neutral.main} fontWeight={600}>{dailyAllowedUploads}</Typography>
+            <Typography color={palette.neutral.medium}>Saves:</Typography>
+            <Typography color={palette.neutral.main} fontWeight={600}>{dailyAllowedSaves}</Typography>
+            <Typography color={palette.neutral.medium}>Edits:</Typography>
+            <Typography color={palette.neutral.main} fontWeight={600}>{dailyAllowedEdits}</Typography>
+            <Typography color={palette.neutral.medium}>Deletes:</Typography>
+            <Typography color={palette.neutral.main} fontWeight={600}>{dailyAllowedDeletes}</Typography>
+          </Box>
+        </Box>
+      }
+
       <Box
         width="100%"
         padding={isNonMobileScreens ? "12rem 16%" : "2rem 8%"}
