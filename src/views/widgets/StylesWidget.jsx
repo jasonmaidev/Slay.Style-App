@@ -83,7 +83,6 @@ const StylesWidget = ({ goToPrevious, goToNext, data, pageCount, pageNumber, set
             shorts,
             footwear,
             occasions,
-            isFavorite
           }) => (
             <StyleWidget
               key={_id}
@@ -99,7 +98,6 @@ const StylesWidget = ({ goToPrevious, goToNext, data, pageCount, pageNumber, set
               shorts={shorts}
               footwear={footwear}
               occasions={occasions}
-              isFavorite={isFavorite}
               pageNumber={pageNumber}
             />
           ))}

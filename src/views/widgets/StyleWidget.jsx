@@ -1,7 +1,7 @@
 import { Box, useMediaQuery, IconButton, Tooltip, Menu, MenuItem, ListItemIcon, ListItemText, Grow, Dialog, useTheme } from "@mui/material"
 import { Delete, Edit, MoreVert, MoreHoriz } from "@mui/icons-material"
-import { AiFillStar } from "react-icons/ai"
-import { BsStars } from "react-icons/bs"
+// import { AiFillStar } from "react-icons/ai"
+// import { BsStars } from "react-icons/bs"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
@@ -55,16 +55,15 @@ const StyleWidget = ({
   shorts,
   footwear,
   occasions,
-  isFavorite
 }) => {
   const isSmallMobileScreens = useMediaQuery("(max-width:800px) and (max-height:800px)")
   const isNonMobileScreens = useMediaQuery("(min-width:1000px) and (max-height:2160px)")
-  const isFullHDScreens = useMediaQuery("(min-width:1800px) and (max-height:2160px)")
+  // const isFullHDScreens = useMediaQuery("(min-width:1800px) and (max-height:2160px)")
   const token = useSelector((state) => state.token)
-  const { palette } = useTheme()
+  // const { palette } = useTheme()
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const sortByOccasion = useSelector((state) => state.sortByOccasion)
+  // const sortByOccasion = useSelector((state) => state.sortByOccasion)
 
   const handleEditStyle = () => {
     dispatch(setCreatingStyle({ creatingStyle: false }))
@@ -109,31 +108,31 @@ const StyleWidget = ({
   const fullLengths = styleOnePiece
   const bottoms = stylePants ? stylePants : styleShorts
 
-  const handleStyleFavorite = () => {
-    editStyleMutation.mutate()
-  }
+  // const handleStyleFavorite = () => {
+  //   editStyleMutation.mutate()
+  // }
 
-  const queryClient = useQueryClient()
+  // const queryClient = useQueryClient()
 
-  const editStyleMutation = useMutation({
-    mutationFn: async () => {
-      return await fetch(`${apiUrl}/styles/${styleId}/update`, {
-        method: "PATCH",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ isFavorite: isFavorite === false ? true : false }),
-      })
-    },
-    onError: (error, _styleName, context) => {
-      console.log("Error fetching:" + context.id + error)
-    },
-    onSettled: () => {
-      queryClient.invalidateQueries(["stylesData", sortByOccasion, pageNumber])
-      handleMenuClose()
-    }
-  })
+  // const editStyleMutation = useMutation({
+  //   mutationFn: async () => {
+  //     return await fetch(`${apiUrl}/styles/${styleId}/update`, {
+  //       method: "PATCH",
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //         "Content-Type": "application/json",
+  //       },
+  //       // body: JSON.stringify({ isFavorite: isFavorite === false ? true : false }),
+  //     })
+  //   },
+  //   onError: (error, _styleName, context) => {
+  //     console.log("Error fetching:" + context.id + error)
+  //   },
+  //   onSettled: () => {
+  //     queryClient.invalidateQueries(["stylesData", sortByOccasion, pageNumber])
+  //     handleMenuClose()
+  //   }
+  // })
 
   /* Options Drowndown Menu */
   const [menuAnchor, setMenuAnchor] = useState(null)
@@ -176,12 +175,13 @@ const StyleWidget = ({
         <Box>
           <Box
             display="flex"
-            justifyContent={isFavorite ? "space-between" : "flex-end"}
+            // justifyContent={isFavorite ? "space-between" : "flex-end"}
+            justifyContent={"flex-end"}
             alignItems="center"
             flexDirection={"row"}
             flexWrap="no-wrap"
           >
-            {isFavorite && <BsStars size={isFullHDScreens ? "1.5rem" : "1rem"} color={palette.primary.main} />}
+            {/* {isFavorite && <BsStars size={isFullHDScreens ? "1.5rem" : "1rem"} color={palette.primary.main} />} */}
 
             {/* ----- ... Options ----- */}
             <Tooltip title="More">
@@ -212,10 +212,10 @@ const StyleWidget = ({
                 horizontal: "right",
               }}
             >
-              <MenuItem onClick={handleStyleFavorite}>
+              {/* <MenuItem onClick={handleStyleFavorite}>
                 <ListItemIcon><AiFillStar fontSize="small" /></ListItemIcon>
                 <ListItemText>{isFavorite ? "Remove favorite" : "Add to favorite"}</ListItemText>
-              </MenuItem>
+              </MenuItem> */}
 
               <MenuItem onClick={handleEditStyle}>
                 <ListItemIcon><Edit fontSize="small" /></ListItemIcon>
