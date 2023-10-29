@@ -122,7 +122,7 @@ const DeleteStyleWidget = ({ userId, styleId, handleDeleteClose, pageNumber }) =
   )
 
   return (
-    <Box margin={"0 2rem"} padding={4}>
+    <Box margin={isSmallMobileScreens ? "0 1rem" : "0 2rem"} padding={4}>
       <Box padding={1} margin={1}>
 
         {/* ----- Delete Confirmation ----- */}
@@ -149,7 +149,7 @@ const DeleteStyleWidget = ({ userId, styleId, handleDeleteClose, pageNumber }) =
             disabled={openSnackbar || (dailyAllowedDeletes < 1 && guestUser)}
             onClick={handleDeleteStyle}
             sx={{
-              padding: "1rem 4rem",
+              padding: "1rem 35%",
               borderRadius: "6rem",
               color: palette.background.alt,
               borderColor: palette.neutral.dark,
@@ -166,7 +166,7 @@ const DeleteStyleWidget = ({ userId, styleId, handleDeleteClose, pageNumber }) =
             variant="outlined"
             onClick={handleDeleteClose}
             sx={{
-              padding: "1rem 4rem",
+              padding: "1rem 35%",
               borderRadius: "6rem",
               color: palette.neutral.dark,
               borderColor: palette.neutral.dark,
