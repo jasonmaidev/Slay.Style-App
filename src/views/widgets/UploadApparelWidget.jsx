@@ -392,11 +392,11 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
           gap={2}
         >
           <Typography>
-            <PiWarning color="#f54260" size={isSmallMobileScreens ? "2rem" : "2rem"} />
+            <PiWarning color={palette.secondary.main} size={isSmallMobileScreens ? "2rem" : "2rem"} />
           </Typography>
           <Typography
             fontSize={"0.75rem"}
-            fontWeight={600} color="#f54260"
+            fontWeight={600} color={palette.secondary.main}
           >
             Users may only store up to 50 apparels per section / category.
           </Typography>
