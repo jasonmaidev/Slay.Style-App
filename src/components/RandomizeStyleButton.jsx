@@ -39,7 +39,7 @@ const RandomizeStyleButton = ({ data }) => {
     const randomFootwear = footwear.length ? footwear[Math.floor(Math.random() * footwear.length)]._id : null
 
     const setRandomHeadwear = () => {
-      const headwearChance = Math.floor(Math.random() * 2)
+      const headwearChance = Math.floor(Math.random() * 4)
       if (headwearChance === 1) {
         dispatch(setStylingHeadwear({ stylingHeadwear: randomHeadwear }))
       } else {
