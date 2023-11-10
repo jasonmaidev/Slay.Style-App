@@ -117,7 +117,6 @@ const ApparelsWidget = ({ handleUploadOpen }) => {
                 onClick={handleUploadOpen}
                 variant="outlined"
                 size="large"
-                endIcon={<PiUploadSimpleLight size={isNonMobileScreens ? "1.75rem" : "1.5rem"} margin={"1rem"} />}
                 sx={{
                   textTransform: "none",
                   margin: "0 0.5rem",
