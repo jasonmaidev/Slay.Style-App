@@ -86,6 +86,7 @@ const ApparelsWidget = ({ handleUploadOpen }) => {
                 gap={1}
                 minHeight={"2rem"}
                 className={isHDScreens ? "laptop-apparels-content" : isNonMobileScreens ? "apparels-content" : ""}
+                height={isNonMobileScreens ? "72vh" : undefined}
               >
                 {sectionedData.map(({ _id, userId, name, section, description, picturePath, }) => (
                   <ApparelWidget
