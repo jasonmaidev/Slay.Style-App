@@ -52,7 +52,7 @@ const DesktopFooter = ({ isLogin }) => {
             fontSize={"0.75rem"}
             fontWeight={600}
             color={isLogin ? palette.neutral.dark : palette.neutral.main}>
-            Developer with 💛 by JsMai.dev
+            Developer with 💛 by Jason | SaberXDev
           </Typography>
         </FlexBetweenBox>
       </Paper>
