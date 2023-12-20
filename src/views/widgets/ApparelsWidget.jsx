@@ -106,36 +106,6 @@ const ApparelsWidget = ({ handleUploadOpen }) => {
           :
           null
         }
-        {!sectionedData?.length && (
-          <>
-            <Box
-              display={"flex"}
-              flexDirection={"row"}
-              justifyContent={"center"}
-              margin={isNonMobileScreens ? "3rem" : "2rem"}
-            >
-              <Button
-                onClick={handleUploadOpen}
-                variant="outlined"
-                size="large"
-                sx={{
-                  textTransform: "none",
-                  margin: "0 0.5rem",
-                  padding: "8rem 4rem",
-                  borderRadius: "2rem",
-                  fontWeight: 500,
-                  color: palette.neutral.medium,
-                  borderColor: palette.neutral.medium,
-                  "&:hover": {
-                    color: palette.primary.main,
-                  }
-                }}
-              >
-                Please upload an apparel.
-              </Button>
-            </Box>
-          </>
-        )}
       </div>
     </>
   )
