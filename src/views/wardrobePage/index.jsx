@@ -175,24 +175,26 @@ const WardrobePage = () => {
                 >
                   Create Style
                 </Button>
-                <Button
-                  variant="outlined"
-                  size="large"
-                  onClick={handleUploadOpen}
-                  sx={{
-                    padding: "1rem 1.5rem",
-                    textTransform: "none",
-                    borderRadius: "6rem",
-                    fontWeight: 600,
-                    color: palette.neutral.dark,
-                    borderColor: palette.neutral.dark,
-                    "&:hover": {
-                      color: palette.primary.main,
-                    }
-                  }}
-                >
-                  Add Apparel
-                </Button>
+                {guestUser === false &&
+                  <Button
+                    variant="outlined"
+                    size="large"
+                    onClick={handleUploadOpen}
+                    sx={{
+                      padding: "1rem 1.5rem",
+                      textTransform: "none",
+                      borderRadius: "6rem",
+                      fontWeight: 600,
+                      color: palette.neutral.dark,
+                      borderColor: palette.neutral.dark,
+                      "&:hover": {
+                        color: palette.primary.main,
+                      }
+                    }}
+                  >
+                    Add Apparel
+                  </Button>
+                }
                 <Button
                   variant="outlined"
                   size="large"
@@ -210,7 +212,7 @@ const WardrobePage = () => {
                     }
                   }}
                 >
-                  Reset Wardrobe
+                  Add Demo Apparels
                 </Button>
               </Stack>)
               :

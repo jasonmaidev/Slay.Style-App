@@ -186,7 +186,7 @@ const ResetWardrobe = ({ handleResetWardrobeClose, _id }) => {
             Are you sure?
           </Typography>
           <Typography textAlign={"center"} color={palette.secondary.main} fontWeight={600} fontSize={"0.75rem"}>
-            *Please note that doing so will replenish the default apparel set AND delete all current saved styles.
+            *Please note that this will replenish the default demo apparels AND delete all current saved styles.
           </Typography>
         </Box>
         <FlexEvenlyBox pt={2} gap={2}>
