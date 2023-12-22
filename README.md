@@ -14,7 +14,7 @@ User registration is currently unavailable to the public but the web-app is full
 
 If you've found this repository, it is more than likely you've also received an email invitation with your unique guest user credentials. Please go ahead and login to the application with the provided guest account username + password and try out some of the awesome features that [Slay.Style](https://slay.style) has to offer!
 
-If you would like to try it out, please shoot me an email over at jason.saberxdev@gmail.com
+If you need guest account credentials to try it out, please shoot me an email over at jason.saberxdev@gmail.com
 
 ### Getting Started
 
