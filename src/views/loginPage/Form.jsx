@@ -247,7 +247,7 @@ const Form = () => {
             </Button>
             {isRegister && (
               <Typography>
-                App is currently in closed beta MVP. To try a demo, please reach out to jason@jsmai.dev via email. Thanks!
+                App is currently in closed beta MVP. To try a demo, please reach out to jason.saberxdev@gmail.com via email for guest login credentials. Thanks!
               </Typography>
             )}
             <Typography
