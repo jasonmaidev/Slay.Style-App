@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { TfiMapAlt } from "react-icons/tfi"
-import { Paper, Box, useTheme, Typography, Button, useMediaQuery } from "@mui/material"
+import { Link, Paper, Box, useTheme, Typography, Button, useMediaQuery } from "@mui/material"
 import FlexBetweenBox from "components/FlexBetweenBox"
 
 const DesktopFooter = ({ isLogin }) => {
@@ -52,7 +52,10 @@ const DesktopFooter = ({ isLogin }) => {
             fontSize={"0.75rem"}
             fontWeight={600}
             color={isLogin ? palette.neutral.dark : palette.neutral.main}>
-            Developer with 💛 by Jason | SaberXDev
+            Developer with 💛 by Jason |
+            <Link href="https://saberx.dev/" target="_blank" underline="none" pl={1}>
+              SaberXDev
+            </Link>
           </Typography>
         </FlexBetweenBox>
       </Paper>
