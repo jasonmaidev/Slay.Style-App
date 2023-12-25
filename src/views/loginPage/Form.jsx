@@ -247,7 +247,7 @@ const Form = () => {
             </Button>
             {isRegister && (
               <Typography>
-                App is currently in closed beta MVP. To try a demo, please reach out to jason.saberxdev@gmail.com via email for guest account credentials. Thanks!
+                Please login with your guest crendentials(located on the resume). If you haven't received it yet, simply reach out to jason.saberxdev@gmail.com
               </Typography>
             )}
             <Typography
