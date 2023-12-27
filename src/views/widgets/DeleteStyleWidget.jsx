@@ -149,7 +149,7 @@ const DeleteStyleWidget = ({ userId, styleId, handleDeleteClose, pageNumber }) =
             disabled={openSnackbar || (dailyAllowedDeletes < 1 && guestUser)}
             onClick={handleDeleteStyle}
             sx={{
-              padding: "1rem 25%",
+              padding: "1rem 30%",
               borderRadius: "6rem",
               color: palette.background.alt,
               borderColor: palette.neutral.dark,
@@ -166,7 +166,7 @@ const DeleteStyleWidget = ({ userId, styleId, handleDeleteClose, pageNumber }) =
             variant="outlined"
             onClick={handleDeleteClose}
             sx={{
-              padding: "1rem 25%",
+              padding: "1rem 30%",
               borderRadius: "6rem",
               color: palette.neutral.dark,
               borderColor: palette.neutral.dark,
