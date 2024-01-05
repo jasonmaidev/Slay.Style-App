@@ -52,9 +52,9 @@ const DesktopFooter = ({ isLogin }) => {
             fontSize={"0.75rem"}
             fontWeight={600}
             color={isLogin ? palette.neutral.dark : palette.neutral.main}>
-            Developer with 💛 by Jason |
+            Developer with 💛 by
             <Link href="https://saberx.dev/" target="_blank" underline="none" pl={1}>
-              SaberXDev
+              Jason Mai
             </Link>
           </Typography>
         </FlexBetweenBox>
