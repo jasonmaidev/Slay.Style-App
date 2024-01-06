@@ -51,10 +51,10 @@ const DesktopFooter = ({ isLogin }) => {
           <Typography
             fontSize={"0.75rem"}
             fontWeight={600}
-            color={isLogin ? palette.neutral.dark : palette.neutral.main}>
+          >
             Built with 💛 by
-            <Link href="https://saberx.dev/" target="_blank" underline="none" textTransform={"none"} pl={1}>
-              Jason Mai
+            <Link href="https://jasonmai.dev/" target="_blank" underline="none" pl={1}>
+              JasonMai.dev
             </Link>
           </Typography>
         </FlexBetweenBox>
