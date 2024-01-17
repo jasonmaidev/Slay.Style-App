@@ -247,7 +247,7 @@ const Form = () => {
             </Button>
             {isRegister && (
               <Typography>
-                Please login with your guest crendentials(located on the resume). If you haven't received it yet, simply reach out to jasonmai.dev@gmail.com
+                Please login with your guest crendentials(located on the resume). If you haven't received it yet, simply reach out to jasonmxdev@gmail.com
               </Typography>
             )}
             <Typography
