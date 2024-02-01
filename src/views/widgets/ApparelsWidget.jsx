@@ -106,7 +106,7 @@ const ApparelsWidget = ({ handleUploadOpen }) => {
           :
           null
         }
-        {!sectionedData?.length && (
+        {sectionedData?.length < 1 && (
           <>
             <Box
               display={"flex"}
