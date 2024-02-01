@@ -74,7 +74,7 @@ const WardrobeSortingButtons = () => {
           />
         </Box>
       </Tooltip>
-      <Tooltip title="Dresses, Rompers & Jumpsuits" placement="top">
+      {/* <Tooltip title="Dresses, Rompers & Jumpsuits" placement="top">
         <Box>
           <RadioButton
             changed={handleSection}
@@ -85,7 +85,7 @@ const WardrobeSortingButtons = () => {
             icon={<GiLargeDress color={palette.neutral.medium} size={isFullHDScreens ? "1.75rem" : "1.5rem"} />}
           />
         </Box>
-      </Tooltip>
+      </Tooltip> */}
       <Tooltip title="Pants & Long Skirts" placement="top">
         <Box>
           <RadioButton

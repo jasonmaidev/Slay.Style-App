@@ -296,7 +296,7 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
             />
           </Box>
         </Tooltip>
-        <Tooltip title="Dresses, Rompers & Jumpsuits" placement="top">
+        {/* <Tooltip title="Dresses, Rompers & Jumpsuits" placement="top">
           <Box >
             <RadioButton
               changed={handleSetSection}
@@ -311,7 +311,7 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
               }
             />
           </Box>
-        </Tooltip>
+        </Tooltip> */}
         <Tooltip title="Pants & Long Skirts" placement="bottom">
           <Box >
             <RadioButton

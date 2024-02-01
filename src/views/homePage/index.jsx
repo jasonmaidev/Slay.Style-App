@@ -272,7 +272,7 @@ const HomePage = () => {
                 }
             }
           >
-            {isNonMobileScreens ? "Manage Apparels" : "Reset Wardrobe"}
+            {isNonMobileScreens ? "Manage Apparels" : "Add Demo Apparels"}
           </Button>
 
         </Box>

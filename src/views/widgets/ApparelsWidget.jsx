@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { PiUploadSimpleLight } from "react-icons/pi"
+import { PiArrowRightBold } from "react-icons/pi"
 import "../../styles/scrollbar.min.css"
 import "react-perfect-scrollbar/dist/css/styles.css"
 import PerfectScrollbar from "react-perfect-scrollbar"
@@ -106,6 +106,47 @@ const ApparelsWidget = ({ handleUploadOpen }) => {
           :
           null
         }
+        {!sectionedData?.length && (
+          <>
+            <Box
+              display={"flex"}
+              flexDirection={"row"}
+              justifyContent={"center"}
+              margin={isNonMobileScreens ? "3rem" : "2rem"}
+            >
+              <Button
+                disabled
+                variant="outlined"
+                size="large"
+                endIcon={
+                  isNonMobileScreens ?
+                    <PiArrowRightBold size={isNonMobileScreens ? "1.75rem" : "1.5rem"} margin={"1rem"} />
+                    :
+                    null
+                }
+                sx={{
+                  textTransform: "none",
+                  margin: "0 0.5rem",
+                  padding: "8rem 4rem",
+                  borderRadius: "2rem",
+                  fontWeight: 500,
+                  color: palette.neutral.medium,
+                  borderColor: palette.neutral.medium,
+                  "&:hover": {
+                    color: palette.primary.main,
+                  }
+                }}
+              >
+                {
+                  isNonMobileScreens ?
+                    "Please add apparel(s)."
+                    :
+                    "Please add demo apparels from Home page."
+                }
+              </Button>
+            </Box>
+          </>
+        )}
       </div>
     </>
   )
