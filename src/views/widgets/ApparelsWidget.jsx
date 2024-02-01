@@ -75,38 +75,7 @@ const ApparelsWidget = ({ handleUploadOpen }) => {
         >
           {title}
         </Typography>
-        {sectionedData ?
-          <>
-            <PerfectScrollbar component="div">
-              <ThumbnailsContainer
-                display="flex"
-                flexDirection={"row"}
-                alignItems={"flex-start"}
-                flexWrap={"no-wrap"}
-                gap={1}
-                minHeight={"2rem"}
-                className={isHDScreens ? "laptop-apparels-content" : isNonMobileScreens ? "apparels-content" : ""}
-                height={isNonMobileScreens ? "76vh" : undefined}
-              >
-                {sectionedData.map(({ _id, userId, name, section, description, picturePath, }) => (
-                  <ApparelWidget
-                    key={_id}
-                    apparelId={_id}
-                    apparelUserId={userId}
-                    name={name}
-                    section={section}
-                    description={description}
-                    picturePath={picturePath}
-                    userId={userId}
-                  />
-                ))}
-              </ThumbnailsContainer >
-            </PerfectScrollbar>
-          </>
-          :
-          null
-        }
-        {sectionedData?.length < 1 && (
+        {!sectionedData?.length && (
           <>
             <Box
               display={"flex"}
@@ -147,6 +116,37 @@ const ApparelsWidget = ({ handleUploadOpen }) => {
             </Box>
           </>
         )}
+        {sectionedData ?
+          <>
+            <PerfectScrollbar component="div">
+              <ThumbnailsContainer
+                display="flex"
+                flexDirection={"row"}
+                alignItems={"flex-start"}
+                flexWrap={"no-wrap"}
+                gap={1}
+                minHeight={"2rem"}
+                className={isHDScreens ? "laptop-apparels-content" : isNonMobileScreens ? "apparels-content" : ""}
+                height={isNonMobileScreens ? "76vh" : undefined}
+              >
+                {sectionedData.map(({ _id, userId, name, section, description, picturePath, }) => (
+                  <ApparelWidget
+                    key={_id}
+                    apparelId={_id}
+                    apparelUserId={userId}
+                    name={name}
+                    section={section}
+                    description={description}
+                    picturePath={picturePath}
+                    userId={userId}
+                  />
+                ))}
+              </ThumbnailsContainer >
+            </PerfectScrollbar>
+          </>
+          :
+          null
+        }
       </div>
     </>
   )
