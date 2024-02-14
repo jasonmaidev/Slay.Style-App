@@ -89,7 +89,6 @@ const HomePage = () => {
 
   const goToCreateStyle = () => {
     navigate(`/wardrobe/${_id}`)
-    dispatch(setCreatingStyle({ creatingStyle: true }))
   }
 
   const goToWardrobe = () => {
