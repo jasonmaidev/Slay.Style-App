@@ -36,9 +36,8 @@ const StylesPage = () => {
     setPageNumber(Math.min(pageCount - 1, pageNumber + 1))
   }
 
-  const goToCreateStyle = () => {
+  const goToWardrobe = () => {
     navigate(`/wardrobe/${userId}`)
-    dispatch(setCreatingStyle({ creatingStyle: true }))
   }
 
   // Dynamic query - default: { sortByOccasion: "" } => fetches all user styles
@@ -118,7 +117,7 @@ const StylesPage = () => {
         </Box>
         {isNonMobileScreens &&
           <Button
-            onClick={goToCreateStyle}
+            onClick={goToWardrobe}
             className={mode === "light" ? "gradient-button" : "gradient-button-dark"}
             size="medium"
             sx={
