@@ -5,10 +5,11 @@ import "react-perfect-scrollbar/dist/css/styles.css"
 import PerfectScrollbar from "react-perfect-scrollbar"
 import { useQuery } from "@tanstack/react-query"
 import { Typography, useMediaQuery, useTheme, Box, Button } from "@mui/material"
-import { setLogout } from "state"
+import { setLogout, setHasApparel } from "state"
 import ThumbnailsContainer from "components/ThumbnailsContainer"
 import ApparelWidget from "./ApparelWidget"
 import apiUrl from "config/api"
+import { useEffect } from "react"
 
 const ApparelsWidget = ({ handleUploadOpen }) => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px) and (max-height:2160px)")
@@ -63,6 +64,14 @@ const ApparelsWidget = ({ handleUploadOpen }) => {
   }
 
   console.log(sectionedData?.length)
+
+  useEffect(() => {
+    if (sectionedData?.length < 1) {
+      dispatch(setHasApparel({ hasApparel: false }))
+    } else {
+      dispatch(setHasApparel({ hasApparel: true }))
+    }
+  }, [sectionedData.length])
 
   return (
     <>

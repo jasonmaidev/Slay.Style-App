@@ -119,7 +119,7 @@ const HomePage = () => {
       {/* ----- Page Body ----- */}
       {(isNonMobileScreens && (guestUser === true || friendUser === true)) &&
         <Box pt={isNonMobileScreens ? undefined : 2} display={"flex"} flexDirection={isNonMobileScreens ? "row" : "column"} justifyContent={"flex-end"} alignItems={"center"}>
-          <Typography color={palette.neutral.medium}>Daily Actions Remaining:</Typography>
+          <Typography color={palette.neutral.medium}>Daily Credits Remaining:</Typography>
           <Box
             m={isNonMobileScreens ? 4 : 2}
             p={"1rem 2rem"}
@@ -130,8 +130,8 @@ const HomePage = () => {
             border={`solid 1px ${palette.neutral.medium}`}
             borderRadius={"6rem"}
           >
-            {/* <Typography color={palette.neutral.medium}>Uploads:</Typography>
-            <Typography color={palette.neutral.main} fontWeight={600}>{dailyAllowedUploads}</Typography> */}
+            <Typography color={palette.neutral.medium}>Wardrobe Resets:</Typography>
+            <Typography color={palette.neutral.main} fontWeight={600}>{dailyAllowedResets}</Typography>
             <Typography color={palette.neutral.medium}>Saves:</Typography>
             <Typography color={palette.neutral.main} fontWeight={600}>{dailyAllowedSaves}</Typography>
             <Typography color={palette.neutral.medium}>Edits:</Typography>
@@ -230,7 +230,7 @@ const HomePage = () => {
                     }
             }
           >
-            Start Creating
+            Start Styling
           </Button>
 
           <Button
