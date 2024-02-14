@@ -20,7 +20,7 @@ const initialState = {
   stylingShorts: null, // Style widget's display section
   stylingFootwear: null, // Style widget's display section
   stylingOccasions: [], // Loads the 'occasions' property of a style when editing
-  dailyAllowedResets: 2, // Demo actions for guest users
+  dailyAllowedResets: 10, // Demo actions for guest users
   dailyAllowedUploads: 0, // Demo actions for guest users
   dailyAllowedSaves: 10, // Demo actions for guest users
   dailyAllowedEdits: 10, // Demo actions for guest users
