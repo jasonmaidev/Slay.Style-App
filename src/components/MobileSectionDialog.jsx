@@ -133,7 +133,7 @@ const MobileSectionDialog = ({ handleFilterDialogClose }) => {
           {outerwearDescription}
         </Button>
 
-        <Button
+        {/* <Button
           fullWidth
           style={mobileSortButtonStyles}
           variant="text"
@@ -141,7 +141,7 @@ const MobileSectionDialog = ({ handleFilterDialogClose }) => {
           onClick={sortByOnePiece}
         >
           {onepieceDescription}
-        </Button>
+        </Button> */}
 
         <Button
           fullWidth

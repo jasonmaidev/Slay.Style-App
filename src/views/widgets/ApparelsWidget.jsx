@@ -84,7 +84,6 @@ const ApparelsWidget = ({ handleUploadOpen }) => {
               margin={isNonMobileScreens ? "3rem" : "2rem"}
             >
               <Button
-                disabled
                 variant="outlined"
                 size="large"
                 endIcon={
@@ -99,8 +98,8 @@ const ApparelsWidget = ({ handleUploadOpen }) => {
                   padding: "8rem 4rem",
                   borderRadius: "2rem",
                   fontWeight: 500,
-                  color: palette.neutral.medium,
-                  borderColor: palette.neutral.medium,
+                  color: palette.neutral.dark,
+                  borderColor: palette.neutral.dark,
                   "&:hover": {
                     color: palette.primary.main,
                   }
