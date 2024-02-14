@@ -19,7 +19,7 @@ import {
 import Navbar from "views/navbar"
 import {
   dailyGuestAllowedResets,
-  dailyGuestAllowedUploads,
+  // dailyGuestAllowedUploads,
   dailyGuestAllowedSaves,
   dailyGuestAllowedEdits,
   dailyGuestAllowedDeletes,
@@ -52,7 +52,7 @@ const HomePage = () => {
   const mode = useSelector((state) => state.mode)
   const nextRefreshDate = useSelector((state) => state.nextRefreshDate)
   const dailyAllowedResets = useSelector((state) => state.dailyAllowedResets)
-  const dailyAllowedUploads = useSelector((state) => state.dailyAllowedUploads)
+  // const dailyAllowedUploads = useSelector((state) => state.dailyAllowedUploads)
   const dailyAllowedSaves = useSelector((state) => state.dailyAllowedSaves)
   const dailyAllowedEdits = useSelector((state) => state.dailyAllowedEdits)
   const dailyAllowedDeletes = useSelector((state) => state.dailyAllowedDeletes)
@@ -71,7 +71,7 @@ const HomePage = () => {
   const refreshDailyActions = () => {
     if (guestUser === true) {
       dispatch(setDailyAllowedResets({ dailyAllowedResets: dailyGuestAllowedResets }))
-      dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyGuestAllowedUploads }))
+      // dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyGuestAllowedUploads }))
       dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyGuestAllowedSaves }))
       dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyGuestAllowedEdits }))
       dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyGuestAllowedDeletes }))
@@ -85,10 +85,6 @@ const HomePage = () => {
     } else {
       return
     }
-  }
-
-  const goToCreateStyle = () => {
-    navigate(`/wardrobe/${_id}`)
   }
 
   const goToWardrobe = () => {
@@ -134,8 +130,8 @@ const HomePage = () => {
             border={`solid 1px ${palette.neutral.medium}`}
             borderRadius={"6rem"}
           >
-            <Typography color={palette.neutral.medium}>Uploads:</Typography>
-            <Typography color={palette.neutral.main} fontWeight={600}>{dailyAllowedUploads}</Typography>
+            {/* <Typography color={palette.neutral.medium}>Uploads:</Typography>
+            <Typography color={palette.neutral.main} fontWeight={600}>{dailyAllowedUploads}</Typography> */}
             <Typography color={palette.neutral.medium}>Saves:</Typography>
             <Typography color={palette.neutral.main} fontWeight={600}>{dailyAllowedSaves}</Typography>
             <Typography color={palette.neutral.medium}>Edits:</Typography>
@@ -170,7 +166,7 @@ const HomePage = () => {
           </Typography>
 
           <Button
-            onClick={goToCreateStyle}
+            onClick={goToWardrobe}
             className={mode === "light" ? "gradient-button" : "gradient-button-dark"}
             size="medium"
             sx={
@@ -239,7 +235,7 @@ const HomePage = () => {
 
           <Button
             disabled={!isNonMobileScreens && (!guestUser || dailyAllowedResets < 1)}
-            onClick={isNonMobileScreens ? goToWardrobe : handleResetWardrobeOpen}
+            onClick={isNonMobileScreens ? refreshDailyActions : handleResetWardrobeOpen}
             size="medium"
             variant="outlined"
             sx={
@@ -271,7 +267,7 @@ const HomePage = () => {
                 }
             }
           >
-            {isNonMobileScreens ? "Manage Apparels" : "Add Demo Apparels"}
+            {isNonMobileScreens ? "Refresh Guest Credits" : "Add Demo Apparels"}
           </Button>
 
         </Box>
