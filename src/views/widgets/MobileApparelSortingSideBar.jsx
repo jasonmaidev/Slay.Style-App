@@ -74,9 +74,9 @@ const MobileApparelSortingSideBar = ({ updateApparelsDialogOpen }) => {
       <IconButton sx={{ padding: "5px 8px" }} onClick={handleViewOuterwearApparels}>
         <GiMonclerJacket size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
       </IconButton>
-      <IconButton sx={{ padding: "5px 8px" }} onClick={handleViewOnePieceApparels}>
+      {/* <IconButton sx={{ padding: "5px 8px" }} onClick={handleViewOnePieceApparels}>
         <GiLargeDress size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
-      </IconButton>
+      </IconButton> */}
       <IconButton sx={{ padding: "5px 8px" }} onClick={handleViewPantsApparels}>
         <GiArmoredPants size={isSmallMobileScreens ? "1.4rem" : "1.25rem"} />
       </IconButton>
