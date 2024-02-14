@@ -62,7 +62,7 @@ const CreateStyleWidget = ({ userId }) => {
     !stylingHeadwear
 
   /* Guest User State */
-  const [stylesCount, setStylesCount] = useState(0)
+  // const [stylesCount, setStylesCount] = useState(0)
   const guestUser = useSelector((state) => state.user.guestUser)
   const friendUser = useSelector((state) => state.user.friendUser)
   const dailyAllowedSaves = useSelector((state) => state.dailyAllowedSaves)
@@ -138,10 +138,10 @@ const CreateStyleWidget = ({ userId }) => {
 
   // Create style Mutation
   const handleSaveStyle = () => {
-    if (stylesCount >= 20) {
-      handleGuestSnackbarOpen()
-      return
-    }
+    // if (stylesCount >= 20) {
+    //   handleGuestSnackbarOpen()
+    //   return
+    // }
     saveStyleMutation.mutate()
   }
 
@@ -179,21 +179,21 @@ const CreateStyleWidget = ({ userId }) => {
     }
   })
 
-  const getStylesCount = () => {
-    return fetch(`${apiUrl}/styles/${userId}/count`, {
-      method: "GET",
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((res) => res.json())
-      .then(totalStylesCount => {
-        setStylesCount(totalStylesCount) // Retrived from Api
-      })
-  }
+  // const getStylesCount = () => {
+  //   return fetch(`${apiUrl}/styles/${userId}/count`, {
+  //     method: "GET",
+  //     headers: { Authorization: `Bearer ${token}` },
+  //   })
+  //     .then((res) => res.json())
+  //     .then(totalStylesCount => {
+  //       setStylesCount(totalStylesCount) // Retrived from Api
+  //     })
+  // }
 
-  const { data: stylesCountData } = useQuery(["stylesCountData"], getStylesCount, {
-    keepPreviousData: true,
-    staleTime: 2000 //same duration as snackbar
-  })
+  // const { data: stylesCountData } = useQuery(["stylesCountData"], getStylesCount, {
+  //   keepPreviousData: true,
+  //   staleTime: 2000 //same duration as snackbar
+  // })
 
   /* Snackbar State */
   const [openSnackbar, setOpenSnackbar] = useState(false)
@@ -214,23 +214,23 @@ const CreateStyleWidget = ({ userId }) => {
     </>
   )
   /* Guest Snackbar State */
-  const [openGuestSnackbar, setOpenGuestSnackbar] = useState(false)
-  const handleGuestSnackbarOpen = () => {
-    setOpenGuestSnackbar(true)
-  }
-  const handleGuestSnackbarClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return
-    }
-    setOpenGuestSnackbar(false)
-  }
-  const guestAction = (
-    <>
-      <IconButton size="small" aria-label="close" color="inherit" onClick={handleGuestSnackbarClose}>
-        <IoClose />
-      </IconButton>
-    </>
-  )
+  // const [openGuestSnackbar, setOpenGuestSnackbar] = useState(false)
+  // const handleGuestSnackbarOpen = () => {
+  //   setOpenGuestSnackbar(true)
+  // }
+  // const handleGuestSnackbarClose = (event, reason) => {
+  //   if (reason === "clickaway") {
+  //     return
+  //   }
+  //   setOpenGuestSnackbar(false)
+  // }
+  // const guestAction = (
+  //   <>
+  //     <IconButton size="small" aria-label="close" color="inherit" onClick={handleGuestSnackbarClose}>
+  //       <IoClose />
+  //     </IconButton>
+  //   </>
+  // )
 
   return (
     <Box>
@@ -479,7 +479,7 @@ const CreateStyleWidget = ({ userId }) => {
       </div>
 
       {/* ----- Snackbar on Guest Styles Limit Reached ----- */}
-      <div>
+      {/* <div>
         <Snackbar
           sx={{ height: "auto" }}
           anchorOrigin={{
@@ -492,7 +492,7 @@ const CreateStyleWidget = ({ userId }) => {
           message="Each user may store up to 20 styles during closed beta. Please stay tuned for updates and storage expansions in V2 release. Thanks!"
           action={guestAction}
         />
-      </div>
+      </div> */}
     </Box >
   )
 }
