@@ -242,7 +242,7 @@ const CreateStyleWidget = ({ userId }) => {
         <IconButton onClick={() => dispatch(setCreatingStyle({ creatingStyle: false }))}>
           <CiCircleRemove
             size={isHDScreens ? "2rem" : isFullHDScreens ? "2.5rem" : "1rem"}
-            color={palette.neutral.medium}
+            color={palette.secondary.main}
           />
         </IconButton>
       </FlexBetweenBox>

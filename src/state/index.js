@@ -25,7 +25,8 @@ const initialState = {
   dailyAllowedSaves: 10, // Demo actions for guest users
   dailyAllowedEdits: 10, // Demo actions for guest users
   dailyAllowedDeletes: 10, // Demo actions for guest users
-  nextRefreshDate: null // Demo actions refresh time for daily allowed functions
+  nextRefreshDate: null, // Demo actions refresh time for daily allowed functions
+  hasApparel: false // Account state to determine rendering "Create Style" button
 }
 
 export const appSlice = createSlice({
@@ -109,6 +110,9 @@ export const appSlice = createSlice({
     setNextRefreshDate: (state, action) => {
       state.nextRefreshDate = action.payload.nextRefreshDate
     },
+    setHasApparel: (state, action) => {
+      state.hasApparel = action.payload.hasApparel
+    },
   }
 })
 
@@ -137,6 +141,7 @@ export const {
   setDailyAllowedSaves,
   setDailyAllowedEdits,
   setDailyAllowedDeletes,
-  setNextRefreshDate
+  setNextRefreshDate,
+  setHasApparel
 } = appSlice.actions
 export default appSlice.reducer

@@ -228,7 +228,7 @@ const EditStyleWidget = ({ userId, occasions }) => {
       <FlexBetweenBox>
         <Typography color={palette.neutral.dark} fontWeight={400} fontSize={"1.5rem"}>Editing Style</Typography>
         <IconButton onClick={() => dispatch(setEditingStyle({ editingStyle: false }))}>
-          <CiCircleRemove color={palette.neutral.medium} size={isSmallMobileScreens ? "2rem" : "2.5rem"} />
+          <CiCircleRemove color={palette.secondary.main} size={isSmallMobileScreens ? "2rem" : "2.5rem"} />
         </IconButton>
       </FlexBetweenBox>
 

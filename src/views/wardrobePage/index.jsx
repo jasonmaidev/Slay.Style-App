@@ -48,6 +48,7 @@ const WardrobePage = () => {
   const editingStyle = useSelector((state) => state.editingStyle)
   const dailyAllowedResets = useSelector((state) => state.dailyAllowedResets)
   const guestUser = useSelector((state) => state.user.guestUser)
+  const hasApparel = useSelector((state) => state.hasApparel)
 
   /* Upload Popup Dialog State */
   const [uploadOpen, setUploadOpen] = useState(false)
@@ -138,43 +139,45 @@ const WardrobePage = () => {
                 direction={isNonMobileScreens ? "column" : "row"}
                 margin={isHDScreens ? "2rem 3rem" : isNonMobileScreens ? "2rem 6rem" : "1rem 0.5rem"}
               >
-                <Button
-                  onClick={handleCreateStyle}
-                  className={mode === "light" ? "gradient-button" : "gradient-button-dark"}
-                  size="large"
-                  sx={
-                    (isNonMobileScreens && mode === "light") ?
-                      {
-                        color: palette.neutral.dark,
-                        margin: "0.5rem 0 1rem 0",
-                        padding: "1.5rem 6%",
-                        borderRadius: "6rem",
-                        fontSize: "0.8rem",
-                        fontWeight: 600,
-                        textTransform: "none",
-                        boxShadow: "14px 14px 28px rgba(0,0,0, 0.1),-12px -12px 30px #ffffff",
-                        ":hover": {
-                          backgroundColor: palette.background.default
+                {hasApparel && (
+                  <Button
+                    onClick={handleCreateStyle}
+                    className={mode === "light" ? "gradient-button" : "gradient-button-dark"}
+                    size="large"
+                    sx={
+                      (isNonMobileScreens && mode === "light") ?
+                        {
+                          color: palette.neutral.dark,
+                          margin: "0.5rem 0 1rem 0",
+                          padding: "1.5rem 6%",
+                          borderRadius: "6rem",
+                          fontSize: "0.8rem",
+                          fontWeight: 600,
+                          textTransform: "none",
+                          boxShadow: "14px 14px 28px rgba(0,0,0, 0.1),-12px -12px 30px #ffffff",
+                          ":hover": {
+                            backgroundColor: palette.background.default
+                          }
                         }
-                      }
-                      :
-                      {
-                        color: palette.neutral.darker,
-                        margin: "0.5rem 0 1rem 0",
-                        padding: "1.5rem 6%",
-                        borderRadius: "6rem",
-                        fontSize: "0.8rem",
-                        fontWeight: 600,
-                        textTransform: "none",
-                        boxShadow: "15px 15px 30px #121214, -12px -12px 30px #212125",
-                        ":hover": {
-                          backgroundColor: palette.background.default
+                        :
+                        {
+                          color: palette.neutral.darker,
+                          margin: "0.5rem 0 1rem 0",
+                          padding: "1.5rem 6%",
+                          borderRadius: "6rem",
+                          fontSize: "0.8rem",
+                          fontWeight: 600,
+                          textTransform: "none",
+                          boxShadow: "15px 15px 30px #121214, -12px -12px 30px #212125",
+                          ":hover": {
+                            backgroundColor: palette.background.default
+                          }
                         }
-                      }
-                  }
-                >
-                  Create Style
-                </Button>
+                    }
+                  >
+                    Create Style
+                  </Button>
+                )}
                 {guestUser === false &&
                   <Button
                     variant="outlined"

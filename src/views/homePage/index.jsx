@@ -235,7 +235,7 @@ const HomePage = () => {
                     }
             }
           >
-            Create Style
+            Start Creating
           </Button>
 
           <Button

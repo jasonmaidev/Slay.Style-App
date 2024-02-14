@@ -259,7 +259,7 @@ const MobileCreateStyleWidget = ({ userId }) => {
       <FlexBetweenBox>
         <Typography color={palette.neutral.dark} fontWeight={400} fontSize={"1.5rem"}>Creating Style</Typography>
         <IconButton onClick={() => dispatch(setCreatingStyle({ creatingStyle: false }))}>
-          <CiCircleRemove color={palette.neutral.medium} size={isSmallMobileScreens ? "2rem" : "2.5rem"} />
+          <CiCircleRemove color={palette.secondary.main} size={isSmallMobileScreens ? "2rem" : "2.5rem"} />
         </IconButton>
       </FlexBetweenBox>
 

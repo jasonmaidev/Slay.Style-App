@@ -20,7 +20,8 @@ import {
   setStylingOnePiece,
   setStylingPants,
   setStylingShorts,
-  setStylingFootwear
+  setStylingFootwear,
+  setHasApparel
 } from "state"
 import {
   dailyGuestAllowedResets,
@@ -95,11 +96,16 @@ const ResetWardrobe = ({ handleResetWardrobeClose, _id }) => {
     dispatch(setStylingHeadwear({ stylingHeadwear: null }))
   }
 
+  const handleHasApparel = () => {
+    dispatch(setHasApparel({ hasApparel: true }))
+  }
+
   const handleResetWardrobe = () => {
     handleSnackbarWaitOpen()
     setTimeout(() => resetWardrobeMutation.mutate(), 2500)
     setTimeout(handleSnackbarCompleteOpen(), 3500)
     setTimeout(() => handleResetWardrobeClose(), 4000)
+    setTimeout(() => handleHasApparel(), 4500)
   }
 
   const resetWardrobeMutation = useMutation({

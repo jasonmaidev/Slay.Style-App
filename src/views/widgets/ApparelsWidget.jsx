@@ -84,6 +84,7 @@ const ApparelsWidget = ({ handleUploadOpen }) => {
               margin={isNonMobileScreens ? "3rem" : "2rem"}
             >
               <Button
+                disabled
                 variant="outlined"
                 size="large"
                 endIcon={
