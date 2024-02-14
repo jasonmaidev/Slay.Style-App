@@ -71,7 +71,7 @@ const ApparelsWidget = ({ handleUploadOpen }) => {
     } else {
       dispatch(setHasApparel({ hasApparel: true }))
     }
-  }, [sectionedData.length])
+  }, [sectionedData?.length])
 
   return (
     <>
