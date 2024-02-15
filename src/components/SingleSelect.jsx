@@ -1,5 +1,5 @@
 import { useState } from "react"
-import InputLabel from "@mui/material/InputLabel"
+// import InputLabel from "@mui/material/InputLabel"
 import MenuItem from "@mui/material/MenuItem"
 import FormControl from "@mui/material/FormControl"
 import Select from "@mui/material/Select"
@@ -31,13 +31,14 @@ export default function SingleSelect({ updatePageNumber }) {
   return (
     <div>
       <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-        <InputLabel id="simple-select-autowidth-label">Suitable For</InputLabel>
+        {/* <InputLabel id="simple-select-autowidth-label">Suitable For</InputLabel> */}
         <Select
           labelId="simple-select-autowidth-label"
           id="simple-select-autowidth"
           value={sortByOccasion}
           onChange={handleSelectChange}
-          label="Suitable For"
+          // label="Suitable For"
+          name="style-sort"
           open={selectOpen}
           onMouseEnter={handleSelectOpen}
           onClose={handleSelectClose}
@@ -51,7 +52,7 @@ export default function SingleSelect({ updatePageNumber }) {
               },
             },
             variant: "menu",
-            getContentAnchorEl: null,
+            // getContentAnchorEl: null,
           }}
         >
           <MenuItem value="">
