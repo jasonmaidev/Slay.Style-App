@@ -101,7 +101,6 @@ const DeleteStyleWidget = ({ userId, styleId, handleDeleteClose, pageNumber }) =
     }
   })
 
-  /* Snackbar Component */
   /* Snackbar State */
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const handleSnackbarOpen = () => {

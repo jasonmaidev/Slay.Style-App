@@ -23,10 +23,6 @@ const MobileOccasionDialog = ({ handleFilterDialogClose }) => {
     dispatch(setSortByOccasion({ sortByOccasion: "" }))
     handleFilterDialogClose()
   }
-  const sortByFavorites = () => {
-    dispatch(setSortByOccasion({ sortByOccasion: "favorite" }))
-    handleFilterDialogClose()
-  }
   const sortByCasual = () => {
     dispatch(setSortByOccasion({ sortByOccasion: "casual" }))
     handleFilterDialogClose()
@@ -93,9 +89,6 @@ const MobileOccasionDialog = ({ handleFilterDialogClose }) => {
         alignContent={"flex-start"}
         alignItems={"flex-start"}
       >
-        {/* <Button fullWidth style={mobileSortButtonStyles} variant="text" onClick={sortByFavorites}>
-          favorite
-        </Button> */}
         <Button fullWidth style={mobileSortButtonStyles} variant="text" onClick={sortByCasual}>
           casual
         </Button>

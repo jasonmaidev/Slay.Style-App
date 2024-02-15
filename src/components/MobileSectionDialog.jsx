@@ -54,10 +54,6 @@ const MobileSectionDialog = ({ handleFilterDialogClose }) => {
     dispatch(setSortBySection({ sortBySection: "outerwear" }))
     handleFilterDialogClose()
   }
-  const sortByOnePiece = () => {
-    dispatch(setSortBySection({ sortBySection: "onepiece" }))
-    handleFilterDialogClose()
-  }
   const sortByPants = () => {
     dispatch(setSortBySection({ sortBySection: "pants" }))
     handleFilterDialogClose()
@@ -132,16 +128,6 @@ const MobileSectionDialog = ({ handleFilterDialogClose }) => {
         >
           {outerwearDescription}
         </Button>
-
-        {/* <Button
-          fullWidth
-          style={mobileSortButtonStyles}
-          variant="text"
-          startIcon={<GiLargeDress size={isSmallMobileScreens ? "2rem" : "1.5rem"} />}
-          onClick={sortByOnePiece}
-        >
-          {onepieceDescription}
-        </Button> */}
 
         <Button
           fullWidth

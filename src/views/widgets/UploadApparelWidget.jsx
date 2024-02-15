@@ -10,13 +10,11 @@ import {
   GiPoloShirt,
   GiShirt,
   GiMonclerJacket,
-  GiLargeDress,
   GiArmoredPants,
   GiUnderwearShorts,
   GiConverseShoe
 } from "react-icons/gi"
 import { useMutation, useQueryClient, useQuery } from "@tanstack/react-query"
-import Countdown from "react-countdown"
 import Dropzone from "react-dropzone"
 import { Box, Typography, InputBase, useTheme, Button, IconButton, useMediaQuery, Tooltip, Snackbar } from "@mui/material"
 import {
@@ -90,19 +88,6 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
       dispatch(setNextRefreshDate({ nextRefreshDate: null }))
     } else {
       return
-    }
-  }
-
-  // Countdown renderer callback with condition
-  const renderer = ({ hours, minutes, seconds, completed }) => {
-    if (completed) {
-      refreshDailyActions()
-    } else {
-      return (
-        <span>
-          {hours}:{minutes}:{seconds}
-        </span>
-      )
     }
   }
 
@@ -296,22 +281,6 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
             />
           </Box>
         </Tooltip>
-        {/* <Tooltip title="Dresses, Rompers & Jumpsuits" placement="top">
-          <Box >
-            <RadioButton
-              changed={handleSetSection}
-              id="4a"
-              isSelected={sortBySection === "onepiece"}
-              value="onepiece"
-              icon={
-                <GiLargeDress
-                  color={palette.neutral.dark}
-                  size={isSmallMobileScreens ? "2rem" : isHDScreens ? "3rem" : isFullHDScreens ? "3.5rem" : "2rem"}
-                />
-              }
-            />
-          </Box>
-        </Tooltip> */}
         <Tooltip title="Pants & Long Skirts" placement="bottom">
           <Box >
             <RadioButton
@@ -546,24 +515,6 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
           <Typography fontSize={"0.75rem"} color={palette.neutral.medium}>Apparel upload is currently unavailable for guest users on V1.</Typography>
         </Box>
       )}
-      {/* {guestUser && (
-        <Box
-          display={"flex"}
-          flexDirection={"row"}
-          justifyContent={"space-evenly"}
-          alignItems={"center"}
-          borderRadius={"6rem"}
-        >
-          <Typography color={palette.neutral.medium}>Uploads Remaining: {dailyAllowedUploads}</Typography>
-          {dailyAllowedUploads < 1 && (
-            <Box>
-              <Typography color={palette.neutral.medium}>
-                Refreshes in: <Countdown date={nextRefreshDate} renderer={renderer} />
-              </Typography>
-            </Box>
-          )}
-        </Box>
-      )} */}
 
     </Box>
   )

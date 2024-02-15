@@ -125,7 +125,6 @@ const DeleteApparelWidget = ({ picturePath, apparelId, section, handleDeleteClos
   })
 
   /* Snackbar State */
-  /*  Snackbar State */
   const [openSnackbar, setOpenSnackbar] = useState(false)
   const handleSnackbarOpen = () => {
     setOpenSnackbar(true)

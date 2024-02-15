@@ -4,7 +4,6 @@ const initialState = {
   mode: "light",
   user: null,
   token: null,
-  // sessionExpireDate: null, // Client side session expiration
   sortBySection: "shorttops", // Controls apparel sorting in wardrobe and queries
   sectionSortingMode: "auto", // Enables automatic section switching when creating styles
   sortByOccasion: "", // Controls styles sorting
@@ -44,9 +43,6 @@ export const appSlice = createSlice({
       state.user = null
       state.token = null
     },
-    // setSessionExpireDate: (state, action) => {
-    //   state.sessionExpireDate = action.payload.sessionExpireDate
-    // },
     setSortBySection: (state, action) => {
       state.sortBySection = action.payload.sortBySection
     },
@@ -120,7 +116,6 @@ export const {
   setMode,
   setLogin,
   setLogout,
-  // setSessionExpireDate,
   setSortBySection,
   setSectionSortingMode,
   setSortByOccasion,

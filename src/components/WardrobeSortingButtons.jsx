@@ -5,7 +5,6 @@ import {
   GiPoloShirt,
   GiShirt,
   GiMonclerJacket,
-  GiLargeDress,
   GiArmoredPants,
   GiUnderwearShorts,
   GiConverseShoe
@@ -44,7 +43,6 @@ const WardrobeSortingButtons = () => {
             changed={handleSection}
             id="1a"
             isSelected={sortBySection === "shorttops"}
-            //label="Tops"
             value="shorttops"
             icon={<GiPoloShirt color={palette.neutral.medium} size={isFullHDScreens ? "1.75rem" : "1.5rem"} />}
           />
@@ -56,7 +54,6 @@ const WardrobeSortingButtons = () => {
             changed={handleSection}
             id="2a"
             isSelected={sortBySection === "longtops"}
-            //label="Tops"
             value="longtops"
             icon={<GiShirt color={palette.neutral.medium} size={isFullHDScreens ? "1.75rem" : "1.5rem"} />}
           />
@@ -68,31 +65,18 @@ const WardrobeSortingButtons = () => {
             changed={handleSection}
             id="3a"
             isSelected={sortBySection === "outerwear"}
-            //label="Outerwear"
             value="outerwear"
             icon={<GiMonclerJacket color={palette.neutral.medium} size={isFullHDScreens ? "1.75rem" : "1.5rem"} />}
           />
         </Box>
       </Tooltip>
-      {/* <Tooltip title="Dresses, Rompers & Jumpsuits" placement="top">
-        <Box>
-          <RadioButton
-            changed={handleSection}
-            id="4a"
-            isSelected={sortBySection === "onepiece"}
-            // label="OnePiece"
-            value="onepiece"
-            icon={<GiLargeDress color={palette.neutral.medium} size={isFullHDScreens ? "1.75rem" : "1.5rem"} />}
-          />
-        </Box>
-      </Tooltip> */}
+
       <Tooltip title="Pants & Long Skirts" placement="top">
         <Box>
           <RadioButton
             changed={handleSection}
             id="5a"
             isSelected={sortBySection === "pants"}
-            //label="Pants"
             value="pants"
             icon={<GiArmoredPants color={palette.neutral.medium} size={isFullHDScreens ? "1.75rem" : "1.5rem"} />}
           />
@@ -104,7 +88,6 @@ const WardrobeSortingButtons = () => {
             changed={handleSection}
             id="6a"
             isSelected={sortBySection === "shorts"}
-            //label="Shorts"
             value="shorts"
             icon={<GiUnderwearShorts color={palette.neutral.medium} size={isFullHDScreens ? "1.75rem" : "1.5rem"} />}
           />
@@ -116,7 +99,6 @@ const WardrobeSortingButtons = () => {
             changed={handleSection}
             id="7a"
             isSelected={sortBySection === "footwear"}
-            //label="Footwear"
             value="footwear"
             icon={<GiConverseShoe color={palette.neutral.medium} size={isFullHDScreens ? "1.75rem" : "1.5rem"} />}
           />
@@ -128,7 +110,6 @@ const WardrobeSortingButtons = () => {
             changed={handleSection}
             id="8a"
             isSelected={sortBySection === "headwear"}
-            //label="Headwear"
             value="headwear"
             icon={<GiBilledCap color={palette.neutral.medium} size={isFullHDScreens ? "1.75rem" : "1.5rem"} />}
           />

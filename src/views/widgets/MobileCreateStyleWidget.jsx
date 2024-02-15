@@ -56,7 +56,6 @@ const MobileCreateStyleWidget = ({ userId }) => {
   const navigate = useNavigate()
 
   /* Guest User State */
-  // const [stylesCount, setStylesCount] = useState(0)
   const guestUser = useSelector((state) => state.user.guestUser)
   const friendUser = useSelector((state) => state.user.friendUser)
   const dailyAllowedSaves = useSelector((state) => state.dailyAllowedSaves)
@@ -157,10 +156,6 @@ const MobileCreateStyleWidget = ({ userId }) => {
 
   // Create style Mutation
   const handleCreateStyle = () => {
-    // if (stylesCount >= 20) {
-    //   handleGuestSnackbarOpen()
-    //   return
-    // }
     createStyleMutation.mutate()
   }
 
@@ -198,22 +193,6 @@ const MobileCreateStyleWidget = ({ userId }) => {
     }
   })
 
-  // const getStylesCount = () => {
-  //   return fetch(`${apiUrl}/styles/${userId}/count`, {
-  //     method: "GET",
-  //     headers: { Authorization: `Bearer ${token}` },
-  //   })
-  //     .then((res) => res.json())
-  //     .then(totalStylesCount => {
-  //       setStylesCount(totalStylesCount)
-  //     })
-  // }
-
-  // const { data: stylesCountData } = useQuery(["stylesCountData"], getStylesCount, {
-  //   keepPreviousData: true,
-  //   staleTime: 3000
-  // });
-
   /* Apparel Select SlideLeft Dialog State */
   const [apparelsDialogOpen, setApparelsDialogOpen] = useState(false);
   const handleApparelsDialogClose = () => {
@@ -242,24 +221,6 @@ const MobileCreateStyleWidget = ({ userId }) => {
       </IconButton>
     </>
   )
-
-  // const [openGuestSnackbar, setOpenGuestSnackbar] = useState(false);
-  // const handleGuestSnackbarOpen = () => {
-  //   setOpenGuestSnackbar(true);
-  // };
-  // const handleGuestSnackbarClose = (event, reason) => {
-  //   if (reason === "clickaway") {
-  //     return;
-  //   }
-  //   setOpenGuestSnackbar(false);
-  // };
-  // const guestAction = (
-  //   <>
-  //     <IconButton size="small" aria-label="close" color="inherit" onClick={handleGuestSnackbarClose}>
-  //       <IoClose />
-  //     </IconButton>
-  //   </>
-  // )
 
   return (
     <Box>
@@ -519,22 +480,6 @@ const MobileCreateStyleWidget = ({ userId }) => {
           action={saveAction}
         />
       </div>
-
-      {/* ----- Snackbar on Guest Action Limits Reached ----- */}
-      {/* <div>
-        <Snackbar
-          sx={{ height: "auto" }}
-          anchorOrigin={{
-            vertical: "top",
-            horizontal: "center"
-          }}
-          open={openGuestSnackbar}
-          autoHideDuration={8000}
-          onClose={handleGuestSnackbarClose}
-          message="Each user may store up to 20 styles during closed beta. Please stay tuned for updates and storage expansions in V2 release. Thanks!"
-          action={guestAction}
-        />
-      </div> */}
 
       {/* ----- Mobile Slide in Apparel Select ----- */}
       <ApparelSelectDialog

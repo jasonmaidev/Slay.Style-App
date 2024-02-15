@@ -1,7 +1,3 @@
-// import FlexBetweenBox from "components/FlexBetweenBox"
-// import Dropzone from "react-dropzone"
-// import { ImAttachment } from "react-icons/im"
-// import { v4 as uuidv4 } from "uuid"
 import { Edit } from "@mui/icons-material"
 import { Box, Typography, InputBase, useTheme, Button, IconButton, useMediaQuery } from "@mui/material"
 import { useRef, useState } from "react"
@@ -94,17 +90,11 @@ const EditApparelWidget = ({ picturePath, name, apparelId, section, handleEditCl
 
   const updateMutation = useMutation({
     mutationFn: async () => {
-      // const newImageName = uuidv4()
-      // if (image) {
-      //   setImage(image)
-      // }
       if (newApparelName) {
         setNewApparelName(newApparelName)
       }
       const updatedData = {
         name: newApparelName ? newApparelName : name,
-        // picture: image,
-        // picturePath: image ? newImageName : picturePath
       }
       return await fetch(`${apiUrl}/apparels/${apparelId}/update/${guestUser}/${dailyAllowedEdits}`, {
         method: "PATCH",
@@ -229,48 +219,6 @@ const EditApparelWidget = ({ picturePath, name, apparelId, section, handleEditCl
             />
           )}
         </Box>
-        {/* <Dropzone
-          acceptedFiles=".jpg,.jpeg,.png"
-          multiple={false}
-          onDrop={(acceptedFiles) => setImage(acceptedFiles[0])}
-        >
-          {({ getRootProps, getInputProps }) => (
-            <FlexBetweenBox>
-              <Box
-                {...getRootProps()}
-                border={`2px solid ${palette.neutral.light}`}
-                padding={isSmallMobileScreens ? "1rem 2rem" : !isNonMobileScreens ? "1rem 0.25rem" : isHDScreens ? "2rem" : isFullHDScreens ? "2rem" : "1.5rem 1rem"}
-                margin={isSmallMobileScreens ? "0.5rem" : !isNonMobileScreens ? "0.5rem 0" : isFullHDScreens ? "0 1rem" : "0 3rem"}
-                width="100%"
-                height="200%"
-                borderRadius={isFullHDScreens ? "2rem" : "1.5rem"}
-                sx={{ "&:hover": { cursor: "pointer" } }}
-                textAlign="center"
-              >
-                <input {...getInputProps()} />
-                {!image ? (
-                  <Box>
-                    <Box gap={0.5} pb={0.5} display={"flex"} alignItems={"center"} justifyContent={"center"}>
-                      <ImAttachment size="1.25rem" />
-                      <Typography>Drop new apparel image here</Typography>
-                    </Box>
-                    <Typography
-                      fontSize={"0.75rem"}
-                      sx={{ opacity: 0.4 }}
-                    >
-                      *SQUARE cropped images with clear background recommended.
-                    </Typography>
-                  </Box>
-                ) : (
-                  <FlexBetweenBox>
-                    <Typography>{image.name}</Typography>
-                    <Edit />
-                  </FlexBetweenBox>
-                )}
-              </Box>
-            </FlexBetweenBox>
-          )}
-        </Dropzone> */}
 
         <Box m={1} display={"flex"} justifyContent={"center"}>
           <Button

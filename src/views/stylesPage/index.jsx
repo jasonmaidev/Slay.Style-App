@@ -5,7 +5,7 @@ import PropagateLoader from "react-spinners/PropagateLoader"
 import { useDispatch, useSelector } from "react-redux"
 import { useQuery } from "@tanstack/react-query"
 import { Box, useMediaQuery, useTheme, Button } from "@mui/material"
-import { setCreatingStyle, setLogout } from "state"
+import { setLogout } from "state"
 import Navbar from "views/navbar"
 import StylesWidget from "views/widgets/StylesWidget"
 import apiUrl from "config/api"
@@ -164,7 +164,6 @@ const StylesPage = () => {
             <PropagateLoader
               color={palette.neutral.light}
               loading={true}
-              // cssOverride={footeroverride}
               size={20}
               aria-label="Loading Spinner"
               data-testid="loader"

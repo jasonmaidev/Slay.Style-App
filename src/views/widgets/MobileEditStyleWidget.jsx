@@ -102,7 +102,6 @@ const EditStyleWidget = ({ userId, occasions }) => {
     }
   }
 
-
   // Countdown renderer callback with condition
   const renderer = ({ hours, minutes, seconds, completed }) => {
     if (completed) {

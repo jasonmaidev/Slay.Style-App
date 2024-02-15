@@ -3,17 +3,8 @@ import SetApparelButton from "components/SetApparelButton"
 
 const MobileApparelWidget = ({
   apparelId,
-  apparelUserId,
-  name,
-  description,
   picturePath,
-  section,
-  colors,
-  category,
-  occasions,
-  brand,
-  own,
-  handleApparelDialogClose
+  handleApparelDialogClose,
 }) => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px) and (max-height:2160px)")
 

@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { useParams } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { IoClose } from "react-icons/io5"
 import { PiWarning } from "react-icons/pi"

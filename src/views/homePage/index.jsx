@@ -19,7 +19,6 @@ import {
 import Navbar from "views/navbar"
 import {
   dailyGuestAllowedResets,
-  // dailyGuestAllowedUploads,
   dailyGuestAllowedSaves,
   dailyGuestAllowedEdits,
   dailyGuestAllowedDeletes,
@@ -52,7 +51,6 @@ const HomePage = () => {
   const mode = useSelector((state) => state.mode)
   const nextRefreshDate = useSelector((state) => state.nextRefreshDate)
   const dailyAllowedResets = useSelector((state) => state.dailyAllowedResets)
-  // const dailyAllowedUploads = useSelector((state) => state.dailyAllowedUploads)
   const dailyAllowedSaves = useSelector((state) => state.dailyAllowedSaves)
   const dailyAllowedEdits = useSelector((state) => state.dailyAllowedEdits)
   const dailyAllowedDeletes = useSelector((state) => state.dailyAllowedDeletes)
@@ -71,7 +69,6 @@ const HomePage = () => {
   const refreshDailyActions = () => {
     if (guestUser === true) {
       dispatch(setDailyAllowedResets({ dailyAllowedResets: dailyGuestAllowedResets }))
-      // dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyGuestAllowedUploads }))
       dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyGuestAllowedSaves }))
       dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyGuestAllowedEdits }))
       dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyGuestAllowedDeletes }))
@@ -99,9 +96,6 @@ const HomePage = () => {
   }
 
   useEffect(() => {
-    // if (Math.floor(Date.now()) > sessionExpireDate) {
-    //   dispatch(setSessionExpireDate({ sessionExpireDate: Math.floor(Date.now()) + 86400000 }))
-    // }
     if (!nextRefreshDate) {
       dispatch(setNextRefreshDate({ nextRefreshDate: Math.floor(Date.now()) + 86400000 }))
     }
@@ -276,7 +270,6 @@ const HomePage = () => {
             <PropagateLoader
               color={palette.neutral.light}
               loading={true}
-              // cssOverride={footeroverride}
               size={20}
               aria-label="Loading Spinner"
               data-testid="loader"
@@ -290,7 +283,6 @@ const HomePage = () => {
             <PropagateLoader
               color={palette.neutral.light}
               loading={true}
-              // cssOverride={footeroverride}
               size={20}
               aria-label="Loading Spinner"
               data-testid="loader"

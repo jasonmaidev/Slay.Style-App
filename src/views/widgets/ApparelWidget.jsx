@@ -34,16 +34,9 @@ const ApparelOptionsDialog = styled(Dialog)(({ theme }) => ({
 
 const ApparelWidget = ({
   apparelId,
-  apparelUserId,
   name,
-  description,
   picturePath,
   section,
-  colors,
-  category,
-  occasions,
-  brand,
-  own
 }) => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px) and (max-height:2160px)")
   const isHDScreens = useMediaQuery("(min-width:1280px) and (max-height:900px)")
