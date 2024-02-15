@@ -28,7 +28,7 @@ const DesktopFooter = ({ isLogin }) => {
       >
         <FlexBetweenBox>
           <Box display={"flex"} flexDirection={"row"} gap={4} alignItems={"center"}>
-            {isNonMobileScreens && <Typography fontSize={"0.75rem"} fontWeight={500} color={palette.neutral.medium}>© 2023 Slay.Style</Typography>}
+            {isNonMobileScreens && <Typography fontSize={"0.75rem"} fontWeight={500} color={palette.neutral.medium}>© 2024 Slay.Style</Typography>}
             {isLogin ? null : (
               <Button
                 onClick={getRoadmap}
