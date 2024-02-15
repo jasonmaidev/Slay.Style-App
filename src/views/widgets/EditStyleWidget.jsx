@@ -229,7 +229,10 @@ const EditStyleWidget = ({ userId }) => {
         <Box>
           <FlexEvenlyBox>
             <RandomizeStyleButton data={data} />
-            <MultipleSelect updateSuitableFor={updateSuitableFor} suitableFor={suitableFor} />
+            <Box gap={1} display="flex" flexDirection="row" alignItems="center">
+              Suitable for
+              <MultipleSelect updateSuitableFor={updateSuitableFor} suitableFor={suitableFor} />
+            </Box>
             <Button
               disabled={emptyStyle || openSnackbar || (dailyAllowedEdits < 1 && guestUser)}
               onClick={handleEditStyle}
