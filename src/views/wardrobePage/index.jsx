@@ -38,6 +38,7 @@ const ResetWardrobeDialog = styled(Dialog)(({ theme }) => ({
 const WardrobePage = () => {
   const isSmallMobileScreens = useMediaQuery("(max-width:800px) and (max-height:800px)")
   const isNonMobileScreens = useMediaQuery("(min-width:1000px) and (max-height:2160px)")
+  const isWideScreens = useMediaQuery("(min-width:3400px) and (max-height:1500px)")
   const isUltraWideScreens = useMediaQuery("(min-width:5000px) and (max-height:1500px)")
   const isHDScreens = useMediaQuery("(min-width:1280px) and (max-height:900px)")
   const { userId } = useParams()
@@ -131,7 +132,7 @@ const WardrobePage = () => {
 
         {/* ----- Desktop Right Column: Style Widget Page Section  ----- */}
         {isNonMobileScreens && (
-          <Box flexBasis={isUltraWideScreens ? "20%" : isNonMobileScreens ? "40%" : undefined}>
+          <Box flexBasis={isUltraWideScreens ? "16%" : isWideScreens ? "32%" : isNonMobileScreens ? "40%" : undefined}>
             {(!creatingStyle && !editingStyle) ? (
               <Stack
                 spacing={isSmallMobileScreens ? 0.5 : 2}
