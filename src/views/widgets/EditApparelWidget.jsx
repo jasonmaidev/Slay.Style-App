@@ -1,4 +1,5 @@
 import { Edit } from "@mui/icons-material"
+import { v4 as uuidv4 } from "uuid"
 import { Box, Typography, InputBase, useTheme, Button, IconButton, useMediaQuery } from "@mui/material"
 import { useRef, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
@@ -185,6 +186,7 @@ const EditApparelWidget = ({ picturePath, name, apparelId, section, handleEditCl
             </IconButton>
           )}
           <InputBase
+            id={uuidv4()}
             placeholder={displayName}
             onChange={(e) => setNewApparelName(e.target.value)}
             value={newApparelName}
