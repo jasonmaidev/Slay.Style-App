@@ -64,7 +64,7 @@ export default function MultipleSelect({ updateSuitableFor }) {
   return (
     <div>
       <FormControl
-        sx={isNonMobileScreens ? { m: 1, minWidth: 100, maxWidth: 200 } : { m: 1, minWidth: 100, maxWidth: 200 }}
+        sx={isNonMobileScreens ? { m: 1, minWidth: 100, maxWidth: 160 } : { m: 1, minWidth: 100, maxWidth: 160 }}
       >
         {/* <InputLabel id="multiple-event-label">Suitable For</InputLabel> */}
         <Select
