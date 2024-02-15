@@ -1,5 +1,6 @@
 import "../../styles/radio-button.min.css"
 import { useState } from "react"
+import { v4 as uuidv4 } from "uuid"
 import { useSelector, useDispatch } from "react-redux"
 import { IoClose } from "react-icons/io5"
 import { BiEditAlt } from "react-icons/bi"
@@ -454,6 +455,7 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
         {/* ----- Text Input Field ----- */}
         <FlexBetweenBox>
           <InputBase
+            id={uuidv4()}
             placeholder="Name : optional"
             onChange={(e) => setApparelName(e.target.value)}
             value={apparelName}
