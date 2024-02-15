@@ -132,7 +132,7 @@ const WardrobePage = () => {
 
         {/* ----- Desktop Right Column: Style Widget Page Section  ----- */}
         {isNonMobileScreens && (
-          <Box flexBasis={isUltraWideScreens ? "16%" : isWideScreens ? "32%" : isNonMobileScreens ? "40%" : undefined}>
+          <Box flexBasis={isUltraWideScreens ? "16%" : isWideScreens ? "32%" : isNonMobileScreens ? "36%" : undefined}>
             {(!creatingStyle && !editingStyle) ? (
               <Stack
                 spacing={isSmallMobileScreens ? 0.5 : 2}

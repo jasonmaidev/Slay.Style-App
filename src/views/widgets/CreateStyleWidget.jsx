@@ -226,7 +226,10 @@ const CreateStyleWidget = ({ userId }) => {
         <Box>
           <FlexEvenlyBox>
             <RandomizeStyleButton data={data} />
-            <MultipleSelect updateSuitableFor={updateSuitableFor} />
+            <Box gap={1} display="flex" flexDirection="row" alignItems="center">
+              Suitable for
+              <MultipleSelect updateSuitableFor={updateSuitableFor} />
+            </Box>
             <Button
               disabled={emptyStyle || openSnackbar || (dailyAllowedSaves < 1 && guestUser)}
               onClick={handleSaveStyle}

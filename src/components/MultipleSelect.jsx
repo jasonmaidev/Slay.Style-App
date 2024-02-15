@@ -41,7 +41,7 @@ export default function MultipleSelect({ updateSuitableFor }) {
     PaperProps: {
       style: {
         maxHeight: ITEM_HEIGHT * events.length + ITEM_PADDING_TOP,
-        width: isNonMobileScreens ? 200 : 140,
+        width: isNonMobileScreens ? 100 : 88,
       },
     },
   }
@@ -63,16 +63,17 @@ export default function MultipleSelect({ updateSuitableFor }) {
   return (
     <div>
       <FormControl
-        sx={isNonMobileScreens ? { m: 1, minWidth: 200, maxWidth: 300 } : { m: 1, minWidth: 140, maxWidth: 200 }}
+        sx={isNonMobileScreens ? { m: 1, minWidth: 100, maxWidth: 200 } : { m: 1, minWidth: 100, maxWidth: 200 }}
       >
-        <InputLabel id="multiple-event-label">Suitable For</InputLabel>
+        {/* <InputLabel id="multiple-event-label">Suitable For</InputLabel> */}
         <Select
           labelId="multiple-event-label"
           id="multiple-event"
           multiple
           value={suitableFor}
           onChange={handleChange}
-          input={<OutlinedInput sx={isNonMobileScreens ? undefined : { pb: "0.75rem" }} label="Suitable For" />}
+          input={<OutlinedInput sx={isNonMobileScreens ? undefined : { pb: "0.75rem" }} />}
+          // input={<OutlinedInput sx={isNonMobileScreens ? undefined : { pb: "0.75rem" }} label="Suitable For" />}
           MenuProps={MenuProps}
           size={isSmallMobileScreens ? "small" : "medium"}
         >
