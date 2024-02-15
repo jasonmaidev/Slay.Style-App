@@ -68,12 +68,14 @@ const StylesWidget = ({ goToPrevious, goToNext, data, pageCount, pageNumber, set
           justifyContent={"center"}
           minHeight={"2rem"}
           className="styles-content"
-          height={!pageCount ? "24vh" :
-            isSmallMobileScreens ? "52vh" :
-              isHDScreens ? "48vh" :
-                isWideScreens ? "64vh" :
-                  isNonMobileScreens ? "56vh" :
-                    "62vh"}
+          height={
+            !pageCount ? "24vh" :
+              isSmallMobileScreens ? "52vh" :
+                isHDScreens ? "48vh" :
+                  isWideScreens ? "54vh" :
+                    isNonMobileScreens ? "56vh" :
+                      "62vh"
+          }
           mt={isNonMobileScreens ? 2 : 0}
         >
           {data.map(({
