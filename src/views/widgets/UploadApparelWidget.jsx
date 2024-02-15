@@ -69,28 +69,8 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
 
   /* Guest User State */
   const guestUser = useSelector((state) => state.user.guestUser)
-  const friendUser = useSelector((state) => state.user.friendUser)
   const dailyAllowedUploads = useSelector((state) => state.dailyAllowedUploads)
   const nextRefreshDate = useSelector((state) => state.nextRefreshDate)
-
-  const refreshDailyActions = () => {
-    if (guestUser === true) {
-      dispatch(setDailyAllowedResets({ dailyAllowedResets: dailyGuestAllowedResets }))
-      dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyGuestAllowedUploads }))
-      dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyGuestAllowedSaves }))
-      dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyGuestAllowedEdits }))
-      dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyGuestAllowedDeletes }))
-      dispatch(setNextRefreshDate({ nextRefreshDate: null }))
-    } else if (friendUser === true) {
-      dispatch(setDailyAllowedUploads({ dailyAllowedUploads: dailyFriendAllowedUploads }))
-      dispatch(setDailyAllowedSaves({ dailyAllowedSaves: dailyFriendAllowedSaves }))
-      dispatch(setDailyAllowedEdits({ dailyAllowedEdits: dailyFriendAllowedEdits }))
-      dispatch(setDailyAllowedDeletes({ dailyAllowedDeletes: dailyFriendAllowedDeletes }))
-      dispatch(setNextRefreshDate({ nextRefreshDate: null }))
-    } else {
-      return
-    }
-  }
 
   // Display Apparel Section Title on Mobile
   const sectionTitle = (sortBySection) => {
@@ -238,7 +218,7 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
           <Box>
             <RadioButton
               changed={handleSetSection}
-              id="1a"
+              id={uuidv4()}
               isSelected={sortBySection === "shorttops"}
               value="shorttops"
               icon={
@@ -254,7 +234,7 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
           <Box>
             <RadioButton
               changed={handleSetSection}
-              id="2a"
+              id={uuidv4()}
               isSelected={sortBySection === "longtops"}
               value="longtops"
               icon={
@@ -270,7 +250,7 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
           <Box >
             <RadioButton
               changed={handleSetSection}
-              id="3a"
+              id={uuidv4()}
               isSelected={sortBySection === "outerwear"}
               value="outerwear"
               icon={
@@ -286,7 +266,7 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
           <Box >
             <RadioButton
               changed={handleSetSection}
-              id="5a"
+              id={uuidv4()}
               isSelected={sortBySection === "pants"}
               value="pants"
               icon={
@@ -302,7 +282,7 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
           <Box >
             <RadioButton
               changed={handleSetSection}
-              id="6a"
+              id={uuidv4()}
               isSelected={sortBySection === "shorts"}
               value="shorts"
               icon={
@@ -318,7 +298,7 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
           <Box >
             <RadioButton
               changed={handleSetSection}
-              id="7a"
+              id={uuidv4()}
               isSelected={sortBySection === "footwear"}
               value="footwear"
               icon={
@@ -334,9 +314,8 @@ const UploadApparelWidget = ({ handleUploadClose }) => {
           <Box >
             <RadioButton
               changed={handleSetSection}
-              id="8a"
+              id={uuidv4()}
               isSelected={sortBySection === "headwear"}
-              //label="Headwear"
               value="headwear"
               icon={
                 <GiBilledCap
