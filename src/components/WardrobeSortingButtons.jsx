@@ -1,5 +1,6 @@
 import { Box, IconButton, useMediaQuery, Tooltip, useTheme } from "@mui/material"
 import { RadioButton } from "components/RadioButton"
+import { v4 as uuidv4 } from "uuid"
 import {
   GiBilledCap,
   GiPoloShirt,
@@ -41,7 +42,7 @@ const WardrobeSortingButtons = () => {
         <Box>
           <RadioButton
             changed={handleSection}
-            id="1a"
+            id={uuidv4()}
             isSelected={sortBySection === "shorttops"}
             value="shorttops"
             icon={<GiPoloShirt color={palette.neutral.medium} size={isFullHDScreens ? "1.75rem" : "1.5rem"} />}
@@ -52,7 +53,7 @@ const WardrobeSortingButtons = () => {
         <Box>
           <RadioButton
             changed={handleSection}
-            id="2a"
+            id={uuidv4()}
             isSelected={sortBySection === "longtops"}
             value="longtops"
             icon={<GiShirt color={palette.neutral.medium} size={isFullHDScreens ? "1.75rem" : "1.5rem"} />}
@@ -63,7 +64,7 @@ const WardrobeSortingButtons = () => {
         <Box>
           <RadioButton
             changed={handleSection}
-            id="3a"
+            id={uuidv4()}
             isSelected={sortBySection === "outerwear"}
             value="outerwear"
             icon={<GiMonclerJacket color={palette.neutral.medium} size={isFullHDScreens ? "1.75rem" : "1.5rem"} />}
@@ -75,7 +76,7 @@ const WardrobeSortingButtons = () => {
         <Box>
           <RadioButton
             changed={handleSection}
-            id="5a"
+            id={uuidv4()}
             isSelected={sortBySection === "pants"}
             value="pants"
             icon={<GiArmoredPants color={palette.neutral.medium} size={isFullHDScreens ? "1.75rem" : "1.5rem"} />}
@@ -86,7 +87,7 @@ const WardrobeSortingButtons = () => {
         <Box>
           <RadioButton
             changed={handleSection}
-            id="6a"
+            id={uuidv4()}
             isSelected={sortBySection === "shorts"}
             value="shorts"
             icon={<GiUnderwearShorts color={palette.neutral.medium} size={isFullHDScreens ? "1.75rem" : "1.5rem"} />}
@@ -97,7 +98,7 @@ const WardrobeSortingButtons = () => {
         <Box>
           <RadioButton
             changed={handleSection}
-            id="7a"
+            id={uuidv4()}
             isSelected={sortBySection === "footwear"}
             value="footwear"
             icon={<GiConverseShoe color={palette.neutral.medium} size={isFullHDScreens ? "1.75rem" : "1.5rem"} />}
@@ -108,7 +109,7 @@ const WardrobeSortingButtons = () => {
         <Box>
           <RadioButton
             changed={handleSection}
-            id="8a"
+            id={uuidv4()}
             isSelected={sortBySection === "headwear"}
             value="headwear"
             icon={<GiBilledCap color={palette.neutral.medium} size={isFullHDScreens ? "1.75rem" : "1.5rem"} />}
