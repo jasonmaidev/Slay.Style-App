@@ -9,6 +9,7 @@ const StylesWidget = ({ goToPrevious, goToNext, data, pageCount, pageNumber, set
   const isSmallMobileScreens = useMediaQuery("(max-width:800px) and (max-height:800px)")
   const isNonMobileScreens = useMediaQuery("(min-width:1000px) and (max-height:2160px)")
   const isHDScreens = useMediaQuery("(min-width:1280px) and (max-height:900px)")
+  const isWideScreens = useMediaQuery("(min-width:3400px) and (max-height:1500px)")
   const sortByOccasion = useSelector((state) => state.sortByOccasion)
   const { palette } = useTheme()
 
@@ -67,7 +68,12 @@ const StylesWidget = ({ goToPrevious, goToNext, data, pageCount, pageNumber, set
           justifyContent={"center"}
           minHeight={"2rem"}
           className="styles-content"
-          height={!pageCount ? "24vh" : isSmallMobileScreens ? "54vh" : isHDScreens ? "60vh" : isNonMobileScreens ? "56vh" : "58vh"}
+          height={!pageCount ? "24vh" :
+            isSmallMobileScreens ? "52vh" :
+              isHDScreens ? "48vh" :
+                isWideScreens ? "64vh" :
+                  isNonMobileScreens ? "56vh" :
+                    "62vh"}
           mt={isNonMobileScreens ? 2 : 0}
         >
           {data.map(({
