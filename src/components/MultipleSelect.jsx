@@ -1,7 +1,8 @@
+// import InputLabel from "@mui/material/InputLabel"
 import { useState, useEffect } from "react"
 import { useTheme } from "@mui/material/styles"
+import { v4 as uuidv4 } from "uuid"
 import OutlinedInput from "@mui/material/OutlinedInput"
-import InputLabel from "@mui/material/InputLabel"
 import MenuItem from "@mui/material/MenuItem"
 import FormControl from "@mui/material/FormControl"
 import Select from "@mui/material/Select"
@@ -72,7 +73,7 @@ export default function MultipleSelect({ updateSuitableFor }) {
           multiple
           value={suitableFor}
           onChange={handleChange}
-          input={<OutlinedInput sx={isNonMobileScreens ? undefined : { pb: "0.75rem" }} />}
+          input={<OutlinedInput sx={isNonMobileScreens ? undefined : { pb: "0.75rem" }} id={uuidv4()} />}
           // input={<OutlinedInput sx={isNonMobileScreens ? undefined : { pb: "0.75rem" }} label="Suitable For" />}
           MenuProps={MenuProps}
           size={isSmallMobileScreens ? "small" : "medium"}
