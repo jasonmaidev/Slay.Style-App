@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { IoClose } from "react-icons/io5"
 import { IoIosArrowRoundBack } from "react-icons/io"
 import { CiCircleRemove } from "react-icons/ci"
+import { useNavigate } from "react-router-dom"
 import { useQuery, useMutation } from "@tanstack/react-query"
 import FlexEvenlyBox from "components/FlexEvenlyBox"
 import FlexBetweenBox from "components/FlexBetweenBox"
@@ -41,6 +42,7 @@ const CreateStyleWidget = ({ userId }) => {
   const token = useSelector((state) => state.token)
   const dispatch = useDispatch()
   const { palette } = useTheme()
+  const navigate = useNavigate()
 
   // Current section-based apparel IDs from global state
   const stylingHeadwear = useSelector((state) => state.stylingHeadwear)
@@ -110,9 +112,14 @@ const CreateStyleWidget = ({ userId }) => {
   }
   const { data } = useQuery(["apparelsData"], getApparels)
 
+  const handleLogout = () => {
+    navigate(`/`)
+    dispatch(setLogout())
+  }
+
   if (data?.message === 'jwt expired') {
     alert('App session has expired. Please login again.')
-    dispatch(setLogout())
+    handleLogout()
   }
 
   // Match apparel IDs to apparels data to find its picturePath to display in style widget

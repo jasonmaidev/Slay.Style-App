@@ -126,9 +126,14 @@ const EditStyleWidget = ({ userId, occasions }) => {
   }
   const { data } = useQuery(["apparelsData"], getApparels)
 
+  const handleLogout = () => {
+    navigate(`/`)
+    dispatch(setLogout())
+  }
+
   if (data?.message === 'jwt expired') {
     alert('App session has expired. Please login again.')
-    dispatch(setLogout())
+    handleLogout()
   }
 
   // Match apparel IDs to apparels data to find its picturePath to display in style widget

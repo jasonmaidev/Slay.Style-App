@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { PiArrowRightBold } from "react-icons/pi"
+import { useNavigate } from "react-router-dom"
 import "../../styles/scrollbar.min.css"
 import "react-perfect-scrollbar/dist/css/styles.css"
 import PerfectScrollbar from "react-perfect-scrollbar"
@@ -19,6 +20,7 @@ const ApparelsWidget = ({ handleUploadOpen }) => {
   const sortBySection = useSelector((state) => state.sortBySection)
   const token = useSelector((state) => state.token)
   const { _id } = useSelector((state) => state.user)
+  const navigate = useNavigate()
 
   const getSectionedApparels = () => {
     return fetch(`${apiUrl}/apparels/${_id}/${sortBySection}`, {
@@ -58,9 +60,14 @@ const ApparelsWidget = ({ handleUploadOpen }) => {
 
   const title = sectionTitle(sortBySection)
 
+  const handleLogout = () => {
+    navigate(`/`)
+    dispatch(setLogout())
+  }
+
   if (sectionedData?.message === 'jwt expired') {
     alert('App session has expired. Please login again.')
-    dispatch(setLogout())
+    handleLogout()
   }
 
   console.log(sectionedData?.length)

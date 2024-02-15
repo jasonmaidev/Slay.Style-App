@@ -61,6 +61,11 @@ const Navbar = ({
     navigate(`/styles/${_id}`)
   }
 
+  const handleLogout = () => {
+    navigate(`/`)
+    dispatch(setLogout())
+  }
+
   /* Options Drowndown Menu */
   const [menuAnchor, setMenuAnchor] = useState(null)
   const open = Boolean(menuAnchor)
@@ -252,7 +257,7 @@ const Navbar = ({
           <ListItemIcon><FaUserAlt fontSize="small" color={theme.palette.neutral.dark} /></ListItemIcon>
           <ListItemText sx={{ color: theme.palette.neutral.dark }}>Profile</ListItemText>
         </MenuItem>
-        <MenuItem onClick={() => dispatch(setLogout())}>
+        <MenuItem onClick={handleLogout}>
           <ListItemIcon><TbLogout fontSize="large" color={theme.palette.neutral.dark} /></ListItemIcon>
           <ListItemText sx={{ color: theme.palette.neutral.dark }}>Logout</ListItemText>
         </MenuItem>

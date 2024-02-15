@@ -5,6 +5,7 @@ import { IoClose } from "react-icons/io5"
 import { FaArrowRight } from "react-icons/fa"
 import { CiCircleRemove } from "react-icons/ci"
 import Countdown from "react-countdown";
+import { useNavigate } from "react-router-dom"
 import { Box, Button, useMediaQuery, IconButton, Typography, useTheme, styled, Dialog, Slide, Snackbar } from "@mui/material"
 import {
   setLogout,
@@ -52,6 +53,7 @@ const MobileCreateStyleWidget = ({ userId }) => {
   const token = useSelector((state) => state.token)
   const { palette } = useTheme()
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   /* Guest User State */
   // const [stylesCount, setStylesCount] = useState(0)
@@ -121,10 +123,15 @@ const MobileCreateStyleWidget = ({ userId }) => {
   }
   const { data } = useQuery(["apparelsData"], getApparels)
 
+  const handleLogout = () => {
+    navigate(`/`)
+    dispatch(setLogout())
+  }
+
   if (data?.message === 'jwt expired') {
     console.log('logout from edit style widget')
     alert('App session has expired. Please login again.')
-    dispatch(setLogout())
+    handleLogout()
   }
 
   // Match apparel IDs to apparels data to find its picturePath to display in style widget

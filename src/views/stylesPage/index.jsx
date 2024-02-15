@@ -54,9 +54,14 @@ const StylesPage = () => {
     staleTime: 5000
   })
 
+  const handleLogout = () => {
+    navigate(`/`)
+    dispatch(setLogout())
+  }
+
   if (data?.message === 'jwt expired') {
     alert('App session has expired. Please login again.')
-    dispatch(setLogout())
+    handleLogout()
   }
 
   const mobileoverride: CSSProperties = {
