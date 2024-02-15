@@ -10,6 +10,7 @@ import { setLogin } from "state"
 import Dropzone from "react-dropzone"
 import FlexBetweenBox from "components/FlexBetweenBox"
 import apiUrl from "config/api"
+import { v4 as uuidv4 } from "uuid"
 
 const registerSchema = yup.object().shape({
   firstName: yup.string(),
@@ -135,7 +136,8 @@ const Form = () => {
             {isRegister && (
               <Fragment>
                 <TextField
-                  id="3"
+                  autoComplete="off"
+                  id={uuidv4()}
                   label="First Name"
                   onBlur={handleBlur}
                   onChange={handleChange}
@@ -148,7 +150,8 @@ const Form = () => {
                   sx={{ gridColumn: "span 2" }}
                 />
                 <TextField
-                  id="4"
+                  autoComplete="off"
+                  id={uuidv4()}
                   label="Last Name"
                   onBlur={handleBlur}
                   onChange={handleChange}
@@ -204,7 +207,8 @@ const Form = () => {
             )}
 
             <TextField
-              id="1"
+              autoComplete="off"
+              id={uuidv4()}
               label="Email"
               onBlur={handleBlur}
               onChange={handleChange}
@@ -215,7 +219,8 @@ const Form = () => {
               sx={{ gridColumn: "span 4" }}
             />
             <TextField
-              id="2"
+              autoComplete="off"
+              id={uuidv4()}
               label="Password"
               type="password"
               onBlur={handleBlur}
