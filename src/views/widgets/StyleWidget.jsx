@@ -88,7 +88,7 @@ const StyleWidget = ({
 
   const { data } = useQuery(["apparelsData"], getApparels, {
     keepPreviousData: true,
-    staleTime: 15000
+    staleTime: 1000
   })
 
   // Displaying Apparels in their sections

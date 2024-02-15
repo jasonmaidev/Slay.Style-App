@@ -33,7 +33,7 @@ const ApparelsWidget = ({ handleUploadOpen }) => {
 
   const { data: sectionedData } = useQuery(["sectionedApparelsData", sortBySection], getSectionedApparels, {
     keepPreviousData: true,
-    staleTime: 3000
+    staleTime: 1000
   })
 
   const sectionTitle = (sortBySection) => {

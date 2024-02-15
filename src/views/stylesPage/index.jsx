@@ -51,7 +51,7 @@ const StylesPage = () => {
 
   const { data } = useQuery(['stylesData', sortByOccasion, pageNumber], getStyles, {
     keepPreviousData: true,
-    staleTime: 5000
+    staleTime: 1000
   })
 
   const handleLogout = () => {
