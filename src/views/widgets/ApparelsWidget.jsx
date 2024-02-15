@@ -70,8 +70,6 @@ const ApparelsWidget = ({ handleUploadOpen }) => {
     handleLogout()
   }
 
-  console.log(sectionedData?.length)
-
   useEffect(() => {
     if (sectionedData?.length < 1) {
       dispatch(setHasApparel({ hasApparel: false }))
