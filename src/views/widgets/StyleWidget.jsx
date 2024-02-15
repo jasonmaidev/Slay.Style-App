@@ -56,8 +56,6 @@ const StyleWidget = ({
 }) => {
   const isSmallMobileScreens = useMediaQuery("(max-width:800px) and (max-height:800px)")
   const isNonMobileScreens = useMediaQuery("(min-width:1000px) and (max-height:2160px)")
-  const isFullHDScreens = useMediaQuery("(min-width:1800px) and (max-height:2160px)")
-  const isWideScreens = useMediaQuery("(min-width:3400px) and (max-height:1500px)")
   const isUltraWideScreens = useMediaQuery("(min-width:5000px) and (max-height:1500px)")
   const token = useSelector((state) => state.token)
   const dispatch = useDispatch()
