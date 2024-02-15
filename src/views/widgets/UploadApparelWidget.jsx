@@ -18,26 +18,7 @@ import {
 import { useMutation, useQueryClient, useQuery } from "@tanstack/react-query"
 import Dropzone from "react-dropzone"
 import { Box, Typography, InputBase, useTheme, Button, IconButton, useMediaQuery, Tooltip, Snackbar } from "@mui/material"
-import {
-  setSortBySection,
-  setDailyAllowedUploads,
-  setDailyAllowedSaves,
-  setDailyAllowedEdits,
-  setDailyAllowedDeletes,
-  setNextRefreshDate,
-  setDailyAllowedResets
-} from "state"
-import {
-  dailyGuestAllowedResets,
-  dailyGuestAllowedUploads,
-  dailyGuestAllowedSaves,
-  dailyGuestAllowedEdits,
-  dailyGuestAllowedDeletes,
-  dailyFriendAllowedUploads,
-  dailyFriendAllowedSaves,
-  dailyFriendAllowedEdits,
-  dailyFriendAllowedDeletes
-} from "config/userAccountCredits"
+import { setSortBySection, setDailyAllowedUploads, setNextRefreshDate } from "state"
 import { RadioButton } from "components/RadioButton"
 import FlexBetweenBox from "components/FlexBetweenBox"
 import apiUrl from "config/api"
