@@ -43,7 +43,6 @@ const StyleWidget = ({
   pageNumber,
   styleId,
   userId,
-  name,
   headwear,
   shorttops,
   longtops,

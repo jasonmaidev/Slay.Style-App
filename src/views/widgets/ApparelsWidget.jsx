@@ -15,6 +15,7 @@ import { useEffect } from "react"
 const ApparelsWidget = ({ handleUploadOpen }) => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px) and (max-height:2160px)")
   const isHDScreens = useMediaQuery("(min-width:1280px) and (max-height:900px)")
+  const isUltraWideScreens = useMediaQuery("(min-width:5000px) and (max-height:1500px)")
   const { palette } = useTheme()
   const dispatch = useDispatch()
   const sortBySection = useSelector((state) => state.sortBySection)
@@ -141,7 +142,11 @@ const ApparelsWidget = ({ handleUploadOpen }) => {
                 gap={1}
                 minHeight={"2rem"}
                 className={isHDScreens ? "laptop-apparels-content" : isNonMobileScreens ? "apparels-content" : ""}
-                height={(isNonMobileScreens && sectionedData?.length) ? "76vh" : undefined}
+                height={
+                  (isUltraWideScreens && sectionedData?.length) ? "82vh" :
+                    (isNonMobileScreens && sectionedData?.length) ? "76vh" :
+                      undefined
+                }
               >
                 {sectionedData.map(({ _id, userId, name, section, description, picturePath, }) => (
                   <ApparelWidget
