@@ -226,43 +226,44 @@ const HomePage = () => {
           >
             Start Styling
           </Button>
-
-          <Button
-            disabled={!isNonMobileScreens && (!guestUser || dailyAllowedResets < 1)}
-            onClick={isNonMobileScreens ? refreshDailyActions : handleResetWardrobeOpen}
-            size="medium"
-            variant="outlined"
-            sx={
-              isNonMobileScreens ?
-                {
-                  margin: "0 32%",
-                  padding: "1rem 1.5rem",
-                  textTransform: "none",
-                  borderRadius: "6rem",
-                  fontWeight: 600,
-                  color: palette.neutral.dark,
-                  borderColor: palette.neutral.dark,
-                  "&:hover": {
-                    color: palette.primary.main,
+          {guestUser === true && (
+            <Button
+              disabled={!isNonMobileScreens && (!guestUser || dailyAllowedResets < 1)}
+              onClick={isNonMobileScreens ? refreshDailyActions : handleResetWardrobeOpen}
+              size="medium"
+              variant="outlined"
+              sx={
+                isNonMobileScreens ?
+                  {
+                    margin: "0 32%",
+                    padding: "1rem 1.5rem",
+                    textTransform: "none",
+                    borderRadius: "6rem",
+                    fontWeight: 600,
+                    color: palette.neutral.dark,
+                    borderColor: palette.neutral.dark,
+                    "&:hover": {
+                      color: palette.primary.main,
+                    }
                   }
-                }
-                :
-                {
-                  margin: "0 16%",
-                  padding: "1rem 1.5rem",
-                  textTransform: "none",
-                  borderRadius: "6rem",
-                  fontWeight: 600,
-                  color: palette.neutral.dark,
-                  borderColor: palette.neutral.dark,
-                  "&:hover": {
-                    color: palette.primary.main,
+                  :
+                  {
+                    margin: "0 16%",
+                    padding: "1rem 1.5rem",
+                    textTransform: "none",
+                    borderRadius: "6rem",
+                    fontWeight: 600,
+                    color: palette.neutral.dark,
+                    borderColor: palette.neutral.dark,
+                    "&:hover": {
+                      color: palette.primary.main,
+                    }
                   }
-                }
-            }
-          >
-            {isNonMobileScreens ? "Refresh Guest Credits" : "Add Demo Apparels"}
-          </Button>
+              }
+            >
+              {isNonMobileScreens ? "Refresh Guest Credits" : "Add Demo Apparels"}
+            </Button>
+          )}
 
         </Box>
         {isNonMobileScreens &&
