@@ -30,7 +30,6 @@ const ViewStyleWidget = ({
       </Box>
       <Box
         width="100%"
-        // padding={isSmallMobileScreens ? "0 0.25rem 0.25rem 0.25rem" : "0 0.5rem 0.5rem 0.5rem"}
         display="flex"
         flexDirection={"row"}
         gap="0.5rem"
@@ -39,7 +38,7 @@ const ViewStyleWidget = ({
       >
 
         {/* ----- Style Widget ----- */}
-        <Box flexBasis="100%">
+        <Box flexBasis="88%">
 
           {/* Headwear Section */}
           <Box
