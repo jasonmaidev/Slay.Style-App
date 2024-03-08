@@ -13,10 +13,13 @@ import {
 } from "state"
 
 const apparelHover = {
-  transition: 'transform 0.3s ease',
-  backgroundColor: 'transparent',
-  '&:hover': {
-    backgroundColor: 'transparent'
+  transition: "transform 0.3s ease",
+  "&:hover, &.Mui-disabled": {
+    backgroundColor: "transparent"
+  },
+  "&:focus, &.Mui-disabled": {
+    backgroundColor: "transparent",
+    color: "transparent"
   },
 };
 
