@@ -139,13 +139,15 @@ const StyleWidget = ({
         padding={isSmallMobileScreens ? "0 4%" : isNonMobileScreens ? "0 1%" : "0 4%"}
         display={"flex"}
         flexDirection={"row"}
+        sx={{
+          cursor: "pointer",
+        }}
       >
 
         {/* ----- COLUMN: Style Widget ----- */}
         <Box>
           <Box
             display="flex"
-            // justifyContent={isFavorite ? "space-between" : "flex-end"}
             justifyContent={"flex-end"}
             alignItems="center"
             flexDirection={"row"}
