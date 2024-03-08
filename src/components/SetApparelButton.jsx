@@ -12,6 +12,14 @@ import {
   setStylingFootwear,
 } from "state"
 
+const apparelHover = {
+  transition: 'transform 0.3s ease',
+  backgroundColor: 'transparent',
+  '&:hover': {
+    backgroundColor: 'transparent'
+  },
+};
+
 const SetApparelButton = ({ picturePath, apparelId, handleApparelDialogClose }) => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px) and (max-height:2160px)")
   const isHDScreens = useMediaQuery("(min-width:1280px) and (max-height:900px)")
@@ -130,7 +138,9 @@ const SetApparelButton = ({ picturePath, apparelId, handleApparelDialogClose }) 
           width={isHDScreens ? "96%" : isNonMobileScreens ? "80%" : "88%"}
           height="auto"
           alt="apparel"
-          style={{ borderRadius: "0.75rem", aspectRatio: "1" }}
+          style={apparelHover}
+          onMouseOver={(e) => { e.currentTarget.style.transform = 'scale(1.1)'; }}
+          onMouseOut={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
           src={`https://slay-style-app.s3.us-west-1.amazonaws.com/${picturePath}`}
         />
       )}
