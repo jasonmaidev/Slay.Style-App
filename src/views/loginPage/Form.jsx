@@ -236,7 +236,7 @@ const Form = () => {
           {/* Form Save Buttons */}
           <Box>
             <Button
-              disabled={isRegister}
+              // disabled={isRegister}
               fullWidth
               type="submit"
               sx={{
@@ -256,7 +256,7 @@ const Form = () => {
             </Button>
             {isRegister && (
               <Typography>
-                Please login with your guest crendentials. If you haven't received it yet, simply reach out to jasonmxdev@gmail.com
+                Registration open until March 11th, 2024.
               </Typography>
             )}
             <Typography
