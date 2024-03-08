@@ -135,6 +135,7 @@ const SetApparelButton = ({ picturePath, apparelId, handleApparelDialogClose }) 
     <Button
       onClick={handleApplyToStyle}
       disabled={!creatingStyle && !editingStyle}
+      sx={apparelHover}
     >
       {picturePath && (
         <img
