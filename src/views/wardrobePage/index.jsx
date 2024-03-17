@@ -217,7 +217,7 @@ const WardrobePage = () => {
                     }
                   }}
                 >
-                  Add Demo Apparels
+                  {hasApparel ? "Reset Wardrobe" : "Add Demo Apparels"}
                 </Button>
               </Stack>)
               :
