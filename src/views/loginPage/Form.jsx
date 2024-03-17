@@ -17,7 +17,7 @@ const registerSchema = yup.object().shape({
   lastName: yup.string(),
   email: yup.string().email("invalid email").required("required"),
   password: yup.string().required("required"),
-  picture: yup.string().required("required"), // make required in V2 prod
+  picture: yup.string().required("required"),
 })
 
 const loginSchema = yup.object().shape({
@@ -41,7 +41,6 @@ const initialValuesLogin = {
 
 const Form = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px) and (max-height:2160px)")
-  // const [picture, setPicture] = useState(null)
   const [pageType, setPageType] = useState("login")
   const { palette } = useTheme()
   const dispatch = useDispatch()
@@ -57,9 +56,6 @@ const Form = () => {
       formData.append(value, values[value])
     }
     formData.append("picturePath", values.picture.name) // sent to backend
-    // if (picture) {
-    //   formData.append("picture", picture) // sent to backend
-    // }
 
     const savedUserResponse = await fetch(
       `${apiUrl}/auth/register`,
