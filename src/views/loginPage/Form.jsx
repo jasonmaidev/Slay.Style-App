@@ -252,7 +252,7 @@ const Form = () => {
             </Button>
             {isRegister && (
               <Typography>
-                Registration open until March 11th, 2024.
+                Registration closed for testing period.
               </Typography>
             )}
             <Typography
